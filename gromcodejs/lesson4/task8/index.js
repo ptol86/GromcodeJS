@@ -4,4 +4,4 @@ let result = 0;
 for (let i = 1; i <= m; i++) {
     result += i;
 }
-console.log(Boolean(result / 1234 > result % 1234));
+console.log((Math.trunc(result / 1234) > (result % 1234));
