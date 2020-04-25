@@ -1,7 +1,16 @@
 function getPrimes(number) {
-    for (let minNumber = 2; minNumber <= number; minNumber++) {
-        if (minNumber % minNumber === 0 && minNumber % 1 === 0) {
+    for (let minNumber = 1; minNumber <= number; minNumber++) {
+        if (isPrime(minNumber)) {
             console.log(minNumber);
         }
+
     }
+}
+
+
+
+function isPrime(num) {
+    if (num > 2 && num % 2 == 0)
+        return false;
+    return num > 1;
 }
