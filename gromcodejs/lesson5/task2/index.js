@@ -1,1 +1,3 @@
-function sayHi = ()
+function sayHi(name) {
+    console.log("Hi, " + name);
+}
