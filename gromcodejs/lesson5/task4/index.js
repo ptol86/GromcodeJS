@@ -1,0 +1,1 @@
+let square = number => number ** 2;
