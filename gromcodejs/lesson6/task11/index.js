@@ -12,9 +12,10 @@ function checker(arr) {
         }
 
     }
-    return (min + max) > 1000;
+
+    return (Math.min.apply(Math, arr) + Math.max.apply(Math, arr)) > 1000;
 }
 
 
 
-// [5,2,22,1,63,54,23]
+// ([1,2,22,1,63,54,1113,4,6,1,32,7,9,32,56,21,-100])
