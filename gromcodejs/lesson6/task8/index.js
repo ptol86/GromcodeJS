@@ -1,7 +1,11 @@
-function squareArray(arr) {
-    let result = [];
-    if (!Array.isArray(arr)) return null;
-    arr.forEach(item => result.push(item ** 2));
-    return result;
+function increaseEvenEl(arr, delta) {
+    if (!Array.isArray(arr))
+        return null;
 
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 === 0) {
+            arr[i] += delta;
+        }
+    }
+    return arr;
 }
