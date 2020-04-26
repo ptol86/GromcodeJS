@@ -7,5 +7,5 @@ function increaseEvenEl(arr, delta) {
             arr[i] += delta;
         }
     }
-    return arr;
+    console.log(arr);
 }
