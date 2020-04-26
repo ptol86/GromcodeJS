@@ -3,9 +3,10 @@ function increaseEvenEl(arr, delta) {
         return null;
 
     for (let i = 0; i < arr.length; i++) {
-        if (i % 2 === 0) {
+        if (arr[i] % 2 === 0) {
             arr[i] += delta;
         }
     }
-    console.log(arr);
+    return arr;
 }
+// ([2, 5, 6, 8, 11, 9, 4], 20)
