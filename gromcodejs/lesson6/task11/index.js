@@ -13,7 +13,7 @@ function checker(arr) {
 
     }
 
-    return (Math.min.apply(Math, arr) + Math.max.apply(Math, arr)) > 1000;
+    return (min + max) > 1000;
 }
 
 
