@@ -1,7 +1,8 @@
 function checker(arr) {
     if (!Array.isArray(arr))
         return null;
-    let min = max = arr[0];
+    let min = arr[0];
+    let max = arr[0];
     for (let i = 1; i < arr.length; i++) {
         if (arr[i] < min) {
             min = arr[i];
@@ -15,6 +16,3 @@ function checker(arr) {
 
     return (min + max) > 1000;
 }
-
-
-
