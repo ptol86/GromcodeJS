@@ -1,20 +1,13 @@
-function uniqueCount(array) {
-    let result = [];
-       for (let i = 0; i < array.length; i++) {
-        let finded = false;
-        for (let j = 0; j <= result.length; j++) {
-            if (array[i] === result[j]) {
-                finded = true;
-            }
+function sortDesc(array) {
+    let arr = array;
+    function compare(a, b) {
+        if (a < b) {
+            return 1;
         }
-        if (!finded) {
-            result.push(array[i]);
-        }
-        
-
+        return -1;
     }
-        
-    return result.length;
+    arr.sort(compare);
+    return arr;
 }
 
 // ([6,8,7,1,8,2,6,7]) 
