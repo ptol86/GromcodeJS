@@ -4,7 +4,7 @@ function increaseEvenEl(arr, delta) {
         }
         
 
-        return arr.map(element => element % 2 === 0 ? element*delta : element);
+        return arr.map(element => element % 2 === 0 ? element+delta : element);
 }
 
 
