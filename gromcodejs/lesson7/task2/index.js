@@ -1,5 +1,5 @@
 function sortDesc(array) {
-    let arr = array;
+    let arr = array.concat();
     function compare(a, b) {
         if (a < b) {
             return 1;
