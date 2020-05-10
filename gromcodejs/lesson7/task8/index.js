@@ -3,9 +3,5 @@ function cloneArr(arr) {
         return null;
         }
         
-return [...arr];}
-
-
-
-
-// (['a', 'b', 'c', 'd'])  ['b', 'd']
+        return [...arr];
+}
