@@ -5,6 +5,7 @@ function withdraw(clients, balances, client, amount) {
         return result;
 }
 
+let zalupa, arr = 0;
 
 
 
@@ -12,4 +13,3 @@ function withdraw(clients, balances, client, amount) {
 
 
 
-(['Ann', 'John', 'Petro'], [1400, 87, -6], 'John', 50);
