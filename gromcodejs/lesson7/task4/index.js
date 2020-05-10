@@ -8,4 +8,7 @@ function getMessagesForBestStudents(a, b) {
 
 
 
-// (['a', 'b', 'c', 'd'])  ['b', 'd']
+// (['a', 'b', 'c', 'd']) 
+
+        let [first, second] =  ['b', 'd'];
+        console.log(...({321: 123}, {2323: 2323}));
