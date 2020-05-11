@@ -41,7 +41,7 @@ const obj3 = {
 };
 const obj4 = {
   name: 'Tom',
-  balumba: 17,
+  age: 17,
 };
 // compareObjects(obj1, obj2); // false
 // compareObjects(obj2, obj3); // false
