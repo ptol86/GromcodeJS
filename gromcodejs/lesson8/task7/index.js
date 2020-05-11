@@ -21,4 +21,3 @@ const addPropertyV4 = (obj, key, value) => {
   newObj[key] = value;
   return newObj;
 }
-let zalupa = {};
