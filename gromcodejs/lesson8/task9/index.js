@@ -4,45 +4,15 @@ const compareObjects = (obj1, obj2) => {
   }
   
   for (let key in obj1) {
-    let result = false;
-    let keyEq = false;
+    let keyAndValueEqual = false;
     for (let key2 in obj2) {
-
-      if (key === key2) {
-        keyEq = true;
-        console.log(key === key2);
-      }
-
-      if (obj1[key] === obj2[key2]) {
-        result = true;
+      if (key === key2 && obj1[key] === obj2[key2]) {
+        keyAndValueEqual = true;
       }
     }
-    if (!result || !keyEq) {
+    if (!keyAndValueEqual) {
       return false;
-    }
-  return true;  
+    } 
 }
+  return true; 
 }
- 
-  
-
-const obj1 = {
-  name: 'Tom',
-  age: 17,
-};
-const obj2 = {
-  name: 'Bob',
-  age: 17,
-};
-const obj3 = {
-  name: 'Bob',
-  age: 17,
-  student: false
-};
-const obj4 = {
-  name: 'Tom',
-  age: 17,
-};
-// compareObjects(obj1, obj2); // false
-// compareObjects(obj2, obj3); // false
-// compareObjects(obj1, obj4); // true
