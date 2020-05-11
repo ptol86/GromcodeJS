@@ -4,7 +4,6 @@ const concatProps = obj => {
            arr.push(obj[key]);    
        }
         
-
         return arr;
 }
 
