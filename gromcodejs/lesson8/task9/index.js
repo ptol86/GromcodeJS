@@ -10,9 +10,36 @@ const compareObjects = (obj1, obj2) => {
         keyAndValueEqual = true;
       }
     }
-    if (!keyAndValueEqual) {
+    if (keyAndValueEqual == false) {
+      console.log(keyAndValueEqual);
       return false;
     } 
 }
   return true; 
 }
+ 
+  
+
+
+  
+
+const obj1 = {
+  name: 'Tom',
+  age: 17,
+};
+const obj2 = {
+  name: 'Bob',
+  age: 17,
+};
+const obj3 = {
+  name: 'Bob',
+  age: 17,
+  student: false
+};
+const obj4 = {
+    age: 17,
+    name: 'Tom',
+};
+// compareObjects(obj1, obj2); // false
+// compareObjects(obj2, obj3); // false
+// compareObjects(obj1, obj4); // true
