@@ -15,7 +15,7 @@ const customers = {
 const getCustomersList = (obj) => {
     let result = [];
     for (let key in obj) {
-        let newObj = Object.assign(obj[key]);
+        let newObj = Object.assign({}, obj[key]);
         newObj['id'] = key;
         result.push(newObj);
         
