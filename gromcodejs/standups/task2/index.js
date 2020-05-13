@@ -3,7 +3,7 @@ let n = 40;
 
 let result = 0;
 
-for (let i = m; 1 <= n; i++) {
+for (let i = m; i <= n; i++) {
     
     if (i % 5 === 0) {
         
@@ -25,6 +25,7 @@ for (let i = m; 1 <= n; i++) {
     if (i % 4 === 0) {
         // console.log("3 if is called for number " + i);
         result *= i;
+        continue;
         
     }
 
