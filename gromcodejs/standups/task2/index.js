@@ -25,7 +25,7 @@ for (let i = m; 1 <= n; i++) {
     if (i % 4 === 0) {
         // console.log("3 if is called for number " + i);
         result *= i;
-        continue;
+        
     }
 
 }
