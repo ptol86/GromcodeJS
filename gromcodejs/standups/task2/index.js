@@ -14,17 +14,17 @@ for (let i = m; 1 <= n; i++) {
     
     if (i % 2 === 0 && i % 4 !==0) {
         // console.log("1 if is called for number " + i);
-        result +=1;
+        result += i;
         continue;
     }
     if (i % 3 === 0) {
         // console.log("2 if is called for number " + i);
-        result -=1;
+        result -= i;
         continue;
     }
     if (i % 4 === 0) {
         // console.log("3 if is called for number " + i);
-        result *=1;
+        result *= i;
         continue;
     }
 
