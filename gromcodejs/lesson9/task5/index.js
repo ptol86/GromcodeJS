@@ -26,6 +26,9 @@
 
 const getPeople = (obj) => {
     results = [];
+    if (Object.keys(obj).length === 0) {
+        return results;
+    }
     Object.values(obj).flat().map(function(obj) {
       results.push(Object.values(obj).flat()[0]);
     });
