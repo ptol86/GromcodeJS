@@ -22,17 +22,11 @@ const rooms = {
 };
 
 
-results = [];
+
 
 const getPeople = (obj) => {
-    if ((obj instanceof Array) || (obj instanceof Object)) {
-        for (let key in obj) {
-            getPeople(obj[key])
-        }
-    }
-    else {    
-        results.push(obj);
-}
+    results = [];
+    
     return results;
 };
 
