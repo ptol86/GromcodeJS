@@ -17,12 +17,3 @@ const pickProps = (obj, arr) => {
   
   
   
-
-
-  let obj = { 
-   a: 1,
-   b: 21, 
-   c: 33, 
-  };
-
-   let arr = ['a', 'c'];
