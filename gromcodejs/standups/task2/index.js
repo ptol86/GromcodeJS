@@ -6,7 +6,7 @@ let result = 0;
 for (let i = m; 1 <= n; i++) {
     
     if (i % 5 === 0) {
-        result +=1;
+        
         // console.log("4 if is called for number " + i);
         console.log(i);
         continue;
