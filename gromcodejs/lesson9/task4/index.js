@@ -26,12 +26,12 @@ const getPeople = (obj) => {
     let result = [];
     result = Object.values(obj);
     let arr = result.flat();
-    console.log(arr);
+    // console.log(arr);
     let aaa = [];
     for (let value of arr) {
         aaa.push(Object.values(value));
     }
-    console.log(aaa.flat());
+    return aaa.flat();
 
 };
 
