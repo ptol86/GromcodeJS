@@ -1,5 +1,5 @@
-/*input = function-count, min- number, max-number;
-output = array of random numbers from min-number to max-number*/
+/*input = number, amount;
+output = array of rounded values of number*/
 
 function superRound(num, len) {
     
