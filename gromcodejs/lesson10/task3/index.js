@@ -4,7 +4,7 @@ const multiRound = num => {
     result.push(Math.round(num * 100) / 100);
     result.push(Math.ceil(num * 100) / 100);
     result.push(Math.trunc(num * 100) / 100);
-    result.push(Number.parseInt((num * 100) / 100).toFixed());
+    result.push(Number.parseInt(((num * 100) / 100).toFixed()));
     return result;
 }
 
