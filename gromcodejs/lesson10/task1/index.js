@@ -8,11 +8,11 @@ const getFiniteNumbersV2 = (arr) => {
     return arr.filter(el => isFinite(el));
 } 
 
-const getNan = (arr) => {
+const getNaN = (arr) => {
     
     return arr.filter(el => Number.isNaN(el));
 } 
-const getNanV2 = (arr) => {
+const getNaNV2 = (arr) => {
     return arr.filter(el => isNaN(el));
 }
 const getIntegers = (arr) => {
