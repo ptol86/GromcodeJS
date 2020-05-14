@@ -2,10 +2,8 @@
 output = array of rounded values of number*/
 
 let splitText = (str, num) => {
-    
-    if (num === undefined) {
+    if (num === 0) {
         num = 10;
-        console.log(num);
     };
     // if (typeof str === 'string' || str instanceof String) {
     //     return null;
@@ -27,7 +25,7 @@ let splitText = (str, num) => {
     return result.join("");
 }
 
-let a = "abcd efghdsfsdfs fsdf sdf sdf s";
+let a = "abcd efgh";
 let b = 3;
 
 // => 'Abcd\n efg\nH...']
