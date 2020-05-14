@@ -6,7 +6,7 @@ const getTotalPrice = arr => {
         
     arr.map(el => sum += el);
     
-    return  ("$" + sum.toFixed(2));
+    return  ("$" + Math.floor(sum * 100) / 100);
 }
     
 
