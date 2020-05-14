@@ -1,11 +1,10 @@
-const multiRound = num => {
-    let result = [];
-    result.push(Math.floor(num * 100) / 100);
-    result.push(Math.round(num * 100) / 100);
-    result.push(Math.ceil(num * 100) / 100);
-    result.push(Math.trunc(num * 100) / 100);
-    result.push(Number.parseInt(((num * 100) / 100).toFixed()));
-    return result;
-}
+const multiRound = num => [
+    Math.floor(num * 100) / 100,
+    Math.round(num * 100) / 100,
+    Math.ceil(num * 100) / 100,
+    Math.trunc(num * 100) / 100,
+    Number.parseInt(((num * 100) / 100).toFixed())
+   
+];
 
 let a = -2.123;
