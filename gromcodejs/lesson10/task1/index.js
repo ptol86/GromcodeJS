@@ -4,37 +4,20 @@ const getFiniteNumbers = (arr) => {
 }
 
 const getFiniteNumbersV2 = (arr) => {
-    let result = [];
-    arr.map(el => {
-        isFinite(el) ? result.push(el): undefined;
-        
-    });
-    return result;
-}
+    
+    return arr.filter(el => isFinite(el));
+} 
 
 const getNan = (arr) => {
-    let result = [];
-    arr.forEach(el => {
-        Number.isNaN(el) ? result.push(el): undefined;
-        
-    });
-    return result;
-}
+    
+    return arr.filter(el => Number.isNaN(el));
+} 
 const getNanV2 = (arr) => {
-    let result = [];
-    arr.forEach(el => {
-       isNaN(el) ? result.push(el): undefined;
-        
-    });
-    return result;
+    return arr.filter(el => isNaN(el));
 }
 const getIntegers = (arr) => {
-    let result = [];
-    arr.forEach(el => {
-       Number.isInteger(el) ? result.push(el): undefined;
-        
-    });
-    return result;
+    return arr.filter(el => Number.isInteger(el));
+    
 }
 
 
