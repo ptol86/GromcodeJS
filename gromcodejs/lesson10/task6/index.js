@@ -17,5 +17,5 @@ function getRandomNumbers(count, min, max) {
 
 
 let a = 4.34;
-let b = 233.123;
-let c = 4.34;
+let b = 2.3;
+let c = 2.9;
