@@ -3,6 +3,10 @@
  * ф-ция getSenseOfLife должна вернуть число 42
  */
 // ... code here
+/*
+    1 input: -
+    2 output: number
+*/
 function getSenseOfLife () {
     return 42;
 }
@@ -14,7 +18,7 @@ function getSenseOfLife () {
     2 output: number
 */
 function getSquared (num) {
-    return num*num;
+    return num * num;
 }
 
 /* ф-ция sum должна принимать два числа и вернуть их сумму */
@@ -23,7 +27,7 @@ function getSquared (num) {
     1 input: number, number
     2 output: number
 */
-function sum (a, b) {
+let sum = function  (a, b) {
     return a + b;
 }
 
@@ -39,8 +43,8 @@ function sum (a, b) {
     1 input: number
     2 output: undefined
 */
-let printAge = function (num) {
-    console.log('I am '+ num + ' years old');
+let sum = function (num) {
+    console.log('I am ' + num + ' years old');
 }
 
 /* ======> Arrow functions <======= */
