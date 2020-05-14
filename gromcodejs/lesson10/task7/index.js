@@ -20,7 +20,3 @@ function superRound(num, len) {
 let a = 4.341231231;
 let b = 6;
 
-function modRound(value, precision) {
-    var precision_number = Math.pow(10, precision);
-    return Math.round(value * precision_number) / precision_number;
-  }
