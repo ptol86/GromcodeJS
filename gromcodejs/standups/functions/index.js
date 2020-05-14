@@ -7,7 +7,7 @@
     1 input: -
     2 output: number
 */
-function getSenseOfLife () {
+function getSenseOfLife() {
     return 42;
 }
 
@@ -17,7 +17,7 @@ function getSenseOfLife () {
     1 input: number
     2 output: number
 */
-function getSquared (num) {
+function getSquared(num) {
     return num * num;
 }
 
@@ -27,7 +27,7 @@ function getSquared (num) {
     1 input: number, number
     2 output: number
 */
-let sum = function  (a, b) {
+function sum(a, b) { 
     return a + b;
 }
 
@@ -43,7 +43,7 @@ let sum = function  (a, b) {
     1 input: number
     2 output: undefined
 */
-let sum = function (num) {
+function printAge (num) {
     console.log('I am ' + num + ' years old');
 }
 
@@ -55,9 +55,8 @@ let sum = function (num) {
     1 input: number, number
     2 output: number
 */
-let mult = (a, b) => {
-    return a * b;
-}
+let mult = (a, b) =>  a * b;
+
 
 /* ф-ция square должна принимать число и вернуть его, возведенное в квадрат */
 // ... code here
