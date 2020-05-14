@@ -10,20 +10,24 @@ let splitText = (str, num) => {
     // }
     let start = 0;
     let result = [];
-    let value = " ";
     let finish = num;
-    while (value !== "") {
+    do {
         value = str.substring(start, finish);
-        const valueCapitalized = value.charAt(0).toUpperCase() + value.slice(1) + "\n";
+        if (value !== "") {
 
-        result.push(valueCapitalized);
-        start += num;
-        finish += num;
-    }
+            const valueCapitalized = value.charAt(0).toUpperCase() + value.slice(1) + "\n";
+            console.log(valueCapitalized);
+            result.push(valueCapitalized);
+            start += num;
+            finish += num;}
+        } 
+    while (value !== "");
+    
+    
     return result.join("");
 }
 
 let a = "abcd efgh";
-let b = 4;
+let b = 3;
 
 // => 'Abcd\n efg\nH...']
