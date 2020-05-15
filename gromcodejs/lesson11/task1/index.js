@@ -1,33 +1,32 @@
-/*input = number, amount;
-output = array of rounded values of number*/
+/*input = string, amount;
+output = string of substrings;
+   algo:
+   1. find if length of substring is undefined;
+   2. make a loop that will slice string on substrings;
+   3. save our substrings into array;
+   4. return string of subsrings.
+*/
 
-let splitText = (str, num) => {
-    
-    if (num === undefined) {
-        num = 10;
-        console.log(num);
+let splitText = (str, len) => {
+    const result = [];
+    let startPosition = 0;
+    if (len === undefined) {
+        len = 10;
+        console.log(len);
     };
-    // if (typeof str === 'string' || str instanceof String) {
-    //     return null;
-    // }
-    let start = 0;
-    let result = [];
-    let finish = num;
-    do {
-        value = str.substring(start, finish);
-        const valueCapitalized = value.charAt(0).toUpperCase() + value.slice(1) + "\n";
-        console.log(valueCapitalized);
-        result.push(valueCapitalized);
-        start += num;
-        finish += num;}
-         
-    while (value !== "");
     
-    
-    return result.join("");
+    while (true) {
+        let chunk = str.substr(startPosition, len);
+        if (chunk.length === 0) {
+            break;
+        }
+        result.push(chunk[0].toUpperCase() + chunk.slice(1));
+        startPosition +=len;
+    }
+    return result.join('\n');
 }
 
-let a = "abcd efghdsfsdfs fsdf sdf sdf s";
-let b = 3;
+// let a = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ex.";
+// let b = 3;
 
-// => 'Abcd\n efg\nH...']
+
