@@ -1,43 +1,34 @@
 /*input = string, amount;
 output = string of substrings;
    algo:
-   1. find if length of substring is undefined;
-   2. make a loop that will slice string on substrings;
-   3. save our substrings into array;
-   4. return string of subsrings.
-   5. if substring < len , rest of subsring need to be fill with ".";
-*/
+   1. find out if type of string is string;
+   2. find out if length of substring is undefined;
+   3. make a loop that will slice string on substrings;
+   4. save our substrings into array;
+   5. if substring < len , rest of len need to be fill with ".";
+   6. return arr of subsrings.
+   */
 
 let splitString = (str, len = 10) => {
     const result = [];
-    let startPosition = 0;
+    let chunk = "";
 
     if (typeof str !== 'string') {
         return null;
     } 
-        
-    while (true) {
-        let chunk = str.substr(startPosition, len);
-        if (chunk.length === 0) {
-            break;
-        }
 
-        if (chunk.length = len) {
+    for (let i = 0; i < str.length; i++) {
+        chunk += str[i];
+        if (chunk.length === len) {
             result.push(chunk);
-            startPosition += len;}
-
-        if (chunk.length < len) {
-            let rest = (len - chunk.length);
-            // console.log(rest);
-            result[result.length-1] = (chunk + (".".repeat(rest)));
+            chunk = "";
+        } else if (str.length - i < len) {
+            let rest = len - chunk.length;
+            result.push(chunk + ".".repeat(rest));
+            return result;
+        }
+        
         }
         
     }
-
-    return result;
-}
-
-// let a = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ex.";
-// let b = 5;
-
-
+    
