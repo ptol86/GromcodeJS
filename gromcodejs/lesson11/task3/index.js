@@ -28,7 +28,7 @@ let splitString = (str, len = 10) => {
 
         if (chunk.length < len) {
             let rest = (len - chunk.length);
-            console.log(rest);
+            // console.log(rest);
             result.push(chunk + (".".repeat(rest)));
         }
         
