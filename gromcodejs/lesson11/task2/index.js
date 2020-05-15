@@ -11,14 +11,13 @@ const sortContacts = (contacts, isAsc = true) => {
         return null;
     }
     
-    return contacts.sort((a,b) => { 
-        if  (isAsc) {
-            return a.name.localeCompare(b.name);
-        } 
-        else {
-            return b.name.localeCompare(a.name);
-        }
-    });
+    return contacts.sort((a,b) => isAsc  ?
+
+         a.name.localeCompare(b.name) :
+
+         b.name.localeCompare(a.name));
+        
+    
 }
 
 
