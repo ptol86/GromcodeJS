@@ -16,23 +16,20 @@
     1. iterate from 1 to num ++;
     2. if num % i  !== 0 false
     */
+    
     function isPrime(num) {
-        
         for (let i = 2; i < num; i++) {
-            // console.log("check for: " + i);
             if (num % i === 0)
-            return false;
+                return false;
+
         }
-        // console.log("loop is finished");
         return true;
     }
 
-    function getPrimes(n)  {
-        for (let i = 2; i <= n; i++) {
-        
+    function getPrimes(number) {
+        for (let i = 2; i <= number; i++) {
             if (isPrime(i)) {
-            console.log(i);
+                console.log(i);
+            }
         }
-    }
-        
     }
