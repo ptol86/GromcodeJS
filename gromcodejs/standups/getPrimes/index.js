@@ -27,12 +27,12 @@
         return true;
     }
 
-   function getPrimes(n)  {
-    for (let i = 1; i <= n; i++) {
+    function getPrimes(n)  {
+        for (let i = 2; i <= n; i++) {
         
-        if (isPrime(i)) {
+            if (isPrime(i)) {
             console.log(i);
         }
     }
         
-   }
+    }
