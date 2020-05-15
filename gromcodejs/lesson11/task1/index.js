@@ -26,7 +26,7 @@ let splitText = (str, len = 10) => {
     return result.join('\n');
 }
 
-let a = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ex.";
-let b = 12;
+// let a = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ex.";
+// let b = 12;
 
 
