@@ -7,14 +7,14 @@ output = string of substrings;
    4. return string of subsrings.
 */
 
-let splitText = (str, len) => {
+let splitText = (str, len = 10) => {
     const result = [];
     let startPosition = 0;
-    if (len === undefined) {
-        len = 10;
-        console.log(len);
-    };
-    
+
+    if (typeof str !== 'string') {
+        return null;
+    } 
+        
     while (true) {
         let chunk = str.substr(startPosition, len);
         if (chunk.length === 0) {
@@ -26,7 +26,7 @@ let splitText = (str, len) => {
     return result.join('\n');
 }
 
-// let a = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ex.";
-// let b = 3;
+let a = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ex.";
+let b = 12;
 
 
