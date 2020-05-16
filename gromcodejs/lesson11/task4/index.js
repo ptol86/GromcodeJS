@@ -10,7 +10,7 @@ let countOccurrences = (str, occurrence) => {
     let result =[];
     count = 0;
 
-    if (str === '') {
+    if (occurrence === '') {
         return null;
     } 
     result = [...str.matchAll(occurrence)];
