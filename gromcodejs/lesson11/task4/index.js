@@ -6,17 +6,28 @@ output = count of occurrences;
    3. return count of occurrences in the string;
    */
 
-let countOccurrences = (str, occurrence) => {
-    let result = [];
-    count = 0;
+// let countOccurrences = (str, occurrence) => {
+//     let result = [];
+//     count = 0;
 
-    if (occurrence === '') {
-        return null;
-    } 
-    result = [...str.matchAll(occurrence)];
-    console.log(result);
-    count = result.length;
-        return count;
-    }
+//     if (occurrence === '') {
+//         return null;
+//     } 
+//     result = str.split(occurrence);
+//     console.log(result);
+//     count = result.length;
+//         return count;
+//     }
     
+
+    let countOccurrences = (str, occurrence) => {
+        
+        if (occurrence === '') {
+            return null;
+        } 
+        let result = str.split(occurrence).length - 1;
+        return result;
+        }
+        
+      
 let a = "Lorem LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem";
