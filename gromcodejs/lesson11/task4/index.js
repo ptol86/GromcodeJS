@@ -7,7 +7,7 @@ output = count of occurrences;
    */
 
 let countOccurrences = (str, occurrence) => {
-    let result =[];
+    let result = [];
     count = 0;
 
     if (occurrence === '') {
@@ -15,7 +15,7 @@ let countOccurrences = (str, occurrence) => {
     } 
     result = [...str.matchAll(occurrence)];
     console.log(result);
-    count = result.length
+    count = result.length;
         return count;
     }
     
