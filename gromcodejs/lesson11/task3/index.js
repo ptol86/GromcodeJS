@@ -22,13 +22,17 @@ let splitString = (str, len = 10) => {
         if (chunk.length === len) {
             result.push(chunk);
             chunk = "";
-        } else if (str.length - i < len) {
-            let rest = len - chunk.length;
-            result.push(chunk + ".".repeat(rest));
-            return result;
+
+        } 
         }
-        
-        }
-        
+    if (chunk !== "") {
+        result.push(chunk + ".".repeat(len - chunk.length));
+
     }
+          
+    return result;
+            
+}
+
     
+let a ="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa odit aspernatur natus sapiente? Velit ipsum omnis consectetur necessitatibus non ex voluptatibus animi suscipit doloribus ab, maxime temporibus incidunt aspernatur dicta.";

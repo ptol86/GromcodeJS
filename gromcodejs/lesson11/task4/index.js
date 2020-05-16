@@ -15,7 +15,8 @@ let countOccurrences = (str, occurrence) => {
     } 
     result = [...str.matchAll(occurrence)];
     console.log(result);
-    count = result.length;
+    count = result.length
         return count;
     }
     
+let a = "Lorem LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem";
