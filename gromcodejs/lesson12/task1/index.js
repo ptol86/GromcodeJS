@@ -7,30 +7,26 @@ output = result of exprassion;
    4. return template string of expression equal to result.
 */
 
-const calc = expression => {
-    const [a, operator, b] = expression.split(" ");
-    let result;
+const cleanTransactionsList = arr => {
+   
+    let result = arr.map(Number);
+    console.log(result);
+    let arrr = [];
+    for (let value of result) {
+        
+        if (!Number.isNaN(value)) {
+            arrr.push(`$${value.toFixed(2)}`);
+        }
 
-    switch (operator) {
-        case "+":
-            result = Number(a) + Number(b);
-            break;
-            
-        case "-":
-            result = a - b;
-            break;
-
-        case "/":
-            result = a / b;
-            break;
-
-        case "*":
-            result = a * b;
-            break;
+    }
+    console.log(arrr);
+    return arrr;
+    
     }
 
-    return `${expression} = ${result}`;
-}
+    let a = ['  1.9 ', '16.4', 17, ' 1 dollar '];
+    
+    cleanTransactionsList(a);
 
 
 
