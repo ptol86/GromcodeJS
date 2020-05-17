@@ -9,7 +9,7 @@ output = result of exprassion;
 
 const cleanTransactionsList = arr => {
    
-    let result = arr.map(Number);
+    let result = arr.slice().map(Number);
     console.log(result);
     let arrr = [];
     for (let value of result) {
@@ -25,7 +25,7 @@ const cleanTransactionsList = arr => {
     }
 
     let a = ['  1.9 ', '16.4', 17, ' 1 dollar '];
-    
+
     cleanTransactionsList(a);
 
 
