@@ -77,3 +77,47 @@ let square = num => num * num;
     2 output: number
 */
 let getMagicNumber = () => 17;
+
+// function process (a, b) {
+//     let result = "";
+//     for (el of a.split("")) {
+//         let isCommon = false;
+//         for (el2 of b.split("")) {
+//             if (el === el2) {
+//                 isCommon = true;
+                               
+//             } 
+//         }
+//         if (!isCommon) {
+//             result += el;
+//         }
+        
+//     }
+//     return result;
+// }
+// function solve(a,b){
+//     let result1 = process(a, b);
+//     let result2 = process(b, a);
+       
+//     return result1 + result2;
+//    };
+
+function solve(n) {
+   let amountNotes = 0;
+   let nominals = [500, 200, 100, 50, 20, 10];
+   for (let i = 0; i < nominals.length; i++) {
+       
+       if (n >= nominals[i]) {
+           let quantity = Math.floor(n / nominals[i]);
+           console.log(quantity);
+           amountNotes += quantity; 
+           n = (n % nominals[i]);
+        
+        }
+    }
+    
+    if (n > 0) {
+        amountNotes = -1;
+        }
+    return amountNotes;
+}
