@@ -10,19 +10,20 @@ output = inverted string;
 
 const cleanTransactionsList = arr => {
    
-    let result = arr.map(Number);
-    console.log(result);
-    for (let i = 0; i < result.length; i++) {
+    let result = arr.slice().map(Number);
+    // console.log(result);
+    let arrr = [];
+    for (let value of result) {
         
-        if (!Number.isNaN([i])) {
-            result.push([i].toFixed(2));
+        if (!Number.isNaN(value)) {
+            arrr.push(`$${value.toFixed(2)}`);
         }
 
     }
+    // console.log(arrr);
+    return arrr;
+    
+    }
 
-    return result;
-}
-
-let a = ['  1.9 ', '16.4', 17, ' 1 dollar '];
-['$1.90', '$16.40', '$17.00']
-
+    let a = ['  1.9 ', '16.4', 17, ' 1 dollar '];
+    cleanTransactionsList;
