@@ -15,11 +15,11 @@ it('should get subtraction of numbers', () => {
 });
 it('should get multiplication of numbers', () => {
     const result = calc(`2 * 3`);
-    expect(result).toEqual('2 * 3 = 6');
+    expect(result).toEqual(`2 * 3 = 6`);
 });
 
 it('should return division', () => {
-    let result = calc('6 / 2');
+    let result = calc(`6 / 2`);
 
-    expect(result).toEqual('6 / 2 = 3');
+    expect(result).toEqual(`6 / 2 = 3`);
 });
