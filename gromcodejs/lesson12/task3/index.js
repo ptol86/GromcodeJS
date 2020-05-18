@@ -10,7 +10,7 @@ output = inverted string;
 
 const cleanTransactionsList = arr => {
    
-    let result = arr.slice().map(Number);
+    let result = arr.slice.map(Number);
     // console.log(result);
     let arrr = [];
     for (let value of result) {
