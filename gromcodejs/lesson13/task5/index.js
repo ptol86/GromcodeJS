@@ -1,5 +1,5 @@
 export function filterNames(arr, text) {
-       
+    if (!Array.isArray(arr)) return null;
     return arr.filter(name => name.includes(text) && name.length > 5);
 }
 

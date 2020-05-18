@@ -6,9 +6,9 @@ it('should return array elements that includes text and which length > 5', () =>
     const result = filterNames(['John', 'Olivya', 'Oleksandr', 'Emanuel', 'Vanya', 'Nastya'], 'ya');
         expect(result).toEqual(['Olivya', 'Nastya']);
 });
-it('should return array elements that includes text and which length > 5', () => {
-    const result = filterNames(['Yellow', 'Green', 'Brown', 'Black', 'Grey', 'White'], 'ow');
-        expect(result).toEqual(['Yellow']);
+it('should return null if arr is not array', () => {
+    const result = filterNames("1,2,3,4,5,6");
+        expect(result).toEqual(null);
 });
 it('should return empty array if text not subject to condition', () => {
     const result = filterNames(['Yellow', 'Green', 'Brown', 'Black', 'Grey', 'White'], 're');
