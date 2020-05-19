@@ -1,9 +1,9 @@
 // 'use strict';
-let message = 'Just learn it';
 
-let createMessenger = () => {
-    
-    export default createMessenger;
+
+const createMessenger = () => {
+
+    let message = 'Just learn it';
 
     function sendMessage(name) {
         
@@ -19,3 +19,4 @@ let createMessenger = () => {
         sender = text;
     }
 }
+export default createMessenger;
