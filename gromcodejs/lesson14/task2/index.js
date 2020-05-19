@@ -16,8 +16,8 @@ const createMessenger = () => {
     function setMessage(text) {
         message = text;
     }
-    function setSender(text) {
-        sender = text;
+    function setSender(name) {
+        sender = name;
     }
     return {
         sendMessage,
