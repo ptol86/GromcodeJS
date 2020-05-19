@@ -13,9 +13,11 @@ const createMessenger = () => {
     function setMessage(text) {
         message = text;
     }
+
     function setSender(test) {
         sender = test;
     }
+
     return {
         sendMessage,
         setMessage,
@@ -23,12 +25,12 @@ const createMessenger = () => {
     }
 }
 
-const messenger = createMessenger();
-messenger.sendMessage("Bob");
-messenger.sendMessage("Tom");
+const messenger1 = createMessenger();
+messenger1.sendMessage("Bob");
+messenger1.sendMessage("Tom");
 const messenger2 = createMessenger();
 messenger2.setMessage("Hello");
 messenger2.setSender("Alex");
 messenger2.sendMessage("July");
 
-export default createMessenger;
+// export default createMessenger;
