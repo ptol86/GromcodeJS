@@ -26,13 +26,15 @@ const createMessenger = () => {
 }
 
 const messenger1 = createMessenger();
+const messenger2 = createMessenger();
+const messenger3 = createMessenger();
+
 messenger1.sendMessage("Bob");
 messenger1.sendMessage("Tom");
-const messenger2 = createMessenger();
+
 messenger2.setMessage("Hello");
-messenger2.setSender("Alex");
-messenger2.sendMessage("July");
-const messenger3 = createMessenger();
+messenger2.sendSender("Alex");
+
 messenger3.setSender("Alex");
 messenger3.sendMessage("Bob");
 
