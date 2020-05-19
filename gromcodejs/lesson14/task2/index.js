@@ -33,7 +33,7 @@ messenger1.sendMessage("Bob");
 messenger1.sendMessage("Tom");
 
 messenger2.setMessage("Hello");
-messenger2.sendSender("Alex");
+messenger2.sendMessage("Alex");
 
 messenger3.setSender("Alex");
 messenger3.sendMessage("Bob");
