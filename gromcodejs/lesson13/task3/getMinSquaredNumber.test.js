@@ -14,7 +14,3 @@ it('should return null if array is not array', () => {
     expect(result).toEqual(null);
 });
 
-// it('should get sum of numbers', () => {
-//     const result = getSum(8, 4);
-//         expect(result).toEqual(12);
-// });
