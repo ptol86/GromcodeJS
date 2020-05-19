@@ -33,4 +33,4 @@ messenger2.setMessage("Hello");
 messenger2.setSender("Alex");
 messenger2.sendMessage("July");
 
-// export default createMessenger;
+export default createMessenger;
