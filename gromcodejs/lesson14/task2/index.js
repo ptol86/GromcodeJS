@@ -1,8 +1,10 @@
 // 'use strict';
 
-let message = 'Just learn it';
+
 
 const createMessenger = () => {
+
+    let message = 'Just learn it';
 
     function sendMessage(name) {
         
@@ -23,4 +25,10 @@ const createMessenger = () => {
         setSender,
     }
 }
+
+const messenger = createMessenger();
+messenger.sendMessage("Bob");
+const messenger2 = createMessenger();
+messenger.sendMessage("Tom");
+
 export default createMessenger;
