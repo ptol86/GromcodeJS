@@ -47,7 +47,7 @@ console.log("after " + numbersList);
 // выведите numbersList в консоль
 
 console.log("before " + numbersList);
-let res5 = numbersList.unshift(100);
+let res5 = numbersList.unshift(0);
 console.log(res5);
 console.log("after " + numbersList);
 
@@ -89,9 +89,9 @@ console.log("After " + squareNumbers);
 // выведите evenNumbers в консоль
 
 
-console.log("Before " + squareNumbers);
+console.log("Before " + numbersList);
 
-const filtered = squareNumbers.filter(el => el % 2 === 0);
+const filtered = numbersList.filter(el => el % 2 === 0);
 
 console.log("After " + filtered);
 
@@ -105,9 +105,9 @@ console.log("After " + filtered);
 
 // c помощью метода find найдите первое нечетное число в numbersList и выведите его в консоль
 
-console.log("Before " + squareNumbers);
+console.log("Before " + numbersList);
 
-const finded = squareNumbers.find(el => el % 2 === 0);
+const finded = numbersList.find(el => el % 2 === 0);
 
 console.log("After " + finded);
 
