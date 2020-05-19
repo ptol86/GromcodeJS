@@ -27,6 +27,13 @@ let res2 = numbersList.push(6);
 console.log(res2);
 console.log("after " + numbersList);
 
+console.log("before " + numbersList)
+let res3 = numbersList.push(11);
+console.log(res3);
+console.log("after " + numbersList);
+
+
+
 
 /* shift - удалит из массива первый элемент и вернет его */
 
@@ -47,7 +54,7 @@ console.log("after " + numbersList);
 // выведите numbersList в консоль
 
 console.log("before " + numbersList);
-let res5 = numbersList.unshift(0);
+let res5 = numbersList.unshift(100);
 console.log(res5);
 console.log("after " + numbersList);
 
@@ -69,11 +76,12 @@ console.log("after " + numbersList);
 // c помощью метода map создайте новый массив squaredNumbers, в котором будут квадраты чисел из numbersList
 // выведите squaredNumbers в консоль
 
+const numbersList1 = [1, 2, 3, 4, 5];
 
-console.log("Before " + numbersList);
+console.log("Before " + numbersList1);
 
 
-const squareNumbers = numbersList.map(el => el * el);
+const squareNumbers = numbersList1.map(el => el * el);
 
 console.log("After " + squareNumbers);
 
@@ -89,11 +97,11 @@ console.log("After " + squareNumbers);
 // выведите evenNumbers в консоль
 
 
-console.log("Before " + numbersList);
+console.log("Before " + squareNumbers);
 
-const filtered = numbersList.filter(el => el % 2 === 0);
+const filtered = numbersList1.map(el => el * el);
 
-console.log("After " + filtered);
+console.log("After " + squareNumbers);
 
 
 
@@ -105,9 +113,4 @@ console.log("After " + filtered);
 
 // c помощью метода find найдите первое нечетное число в numbersList и выведите его в консоль
 
-console.log("Before " + numbersList);
-
-const finded = numbersList.find(el => el % 2 === 0);
-
-console.log("After " + finded);
-
+// ... code here
