@@ -6,13 +6,13 @@ function add(num) {
 }
 
 function decrease(num) {
-    
+    memory = (memory - num);
 }
 
 function reset() {
-    
+    memory = 0;
 }
 
 function getMemo() {
-    
+    return memory;
 }
