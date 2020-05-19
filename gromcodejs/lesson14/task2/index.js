@@ -29,13 +29,13 @@ const messenger1 = createMessenger();
 const messenger2 = createMessenger();
 const messenger3 = createMessenger();
 
-// messenger1.sendMessage("Bob");
-// messenger1.sendMessage("Tom");
+messenger1.sendMessage("Bob");
+messenger1.sendMessage("Tom");
 
-// messenger2.setMessage("Hello");
-// messenger2.sendMessage("Alex");
+messenger2.setMessage("Good job");
+messenger2.sendMessage("Alex");
 
-// messenger3.setSender("Alex");
-// messenger3.sendMessage("Bob");
+messenger3.setSender("Alex");
+messenger3.sendMessage("Bob");
 
 export default createMessenger;
