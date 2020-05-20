@@ -97,11 +97,16 @@ console.log("After " + squareNumbers);
 // выведите evenNumbers в консоль
 
 
-console.log("Before " + squareNumbers);
+console.log("Before filter" + squareNumbers);
 
-const filtered = numbersList1.map(el => el * el);
+const filtered = squareNumbers.filter((el, index, array) => {
+    console.log(index);
+    console.log(array);
 
-console.log("After " + squareNumbers);
+    return el % 2 === 0
+});
+
+console.log("After filter" + filtered);
 
 
 
@@ -112,5 +117,38 @@ console.log("After " + squareNumbers);
 /* если callback(arr[i]) вернет true, то filter прекратит поиск и вернет этот элемент */
 
 // c помощью метода find найдите первое нечетное число в numbersList и выведите его в консоль
+const numbers = [1, 2, 3, 4, 5, 100, 40, 44, 55, 1234];
 
-// ... code here
+console.log("Before " + squareNumbers);
+
+const finded = numbers.find(el => el > 200);
+
+console.log("After " + finded);
+
+// method forEach
+let sum = 0;
+console.log(numbers.forEach(el => sum += el)); // return undefined
+
+console.log("After " + sum);
+
+// method reduce
+console.log("before reduce 1 " + numbers);
+
+let res10 = numbers.reduce((acc, el, index) => {
+    console.log("STEP " + index + "acc is: " + acc);
+    return acc += el;
+}, 0);
+console.log("after reduce 1 ");
+console.log(res10);
+
+// reduce 2 
+console.log("before reduce 2 " + numbers);
+
+console.log(numbers.reduce((acc, el) => {
+    if (el % 2 === 0)
+        acc.push(el);
+
+    return acc;
+}, []));
+
+console.log("after reduce 2 ");

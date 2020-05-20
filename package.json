@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ptol86/GromcodeJS/issues"
   },
-  "homepage": "https://github.com/ptol86/GromcodeJS#readme"
+  "homepage": "https://github.com/ptol86/GromcodeJS#readme",
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6"
+  }
 }
