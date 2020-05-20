@@ -1,36 +1,32 @@
 
-import { createCalculator, calc1, calc2 } from './index';
+import { createLogger, logger } from './index';
 
-it('should add digit to memory digit', () => {
-    const result = calc1.add(25);
-    expect(result).toEqual(25);
+it('must return the object with key-type error under index 0 in the sortedMemory', () => {
+    logger.error('Unexpected error on the site');
+    const result = logger.getRecords('error');
+    expect(result[0].type).toEqual('error');
 });
-it('should  subtract from memory digit another digit', () => {
-    const result = calc1.decrease(10);
-    expect(result).toEqual(15);
+
+it('must return the object with key-type log under index 0 in the sortedMemory', () => {
+    logger.log('User logged in');
+    const result = logger.getRecords('log');
+    expect(result[0].type).toEqual('log');
 });
-it('should reset memory digit', () => {
-    const result = calc1.reset();
-    expect(result).toEqual(0);
+it('must return the object with key-type warn under index 0 in the sortedMemory', () => {
+    logger.warn('User try to restricted page');
+    const result = logger.getRecords('warn');
+    expect(result[0].type).toEqual('warn');
 });
-it('should return memory digit', () => {
-    const result = calc1.getMemo();
-    expect(result).toEqual(0);
+it('must return the all objects  in the sortedMemory', () => {
+    logger.log('User logged in');
+    logger.warn('User try to restricted page');
+    logger.log('User logged out');
+    logger.error('Unexpected error on the site');
+    const result = logger.getRecords();
+    expect(result[0].type).toEqual('log');
+    expect(result[1].type).toEqual('warn');
+    expect(result[2].type).toEqual('log');
+    expect(result[3].type).toEqual('error');
 });
-it('should add digit to memory digit', () => {
-    const result = calc2.add(30);
-    expect(result).toEqual(30);
-});
-it('should  subtract from memory digit another digit', () => {
-    const result = calc2.decrease(35);
-    expect(result).toEqual(-5);
-});
-it('should reset memory digit', () => {
-    const result = calc2.reset();
-    expect(result).toEqual(0);
-});
-it('should return memory digit', () => {
-    const result = calc2.getMemo();
-    expect(result).toEqual(0);
-});
+
 
