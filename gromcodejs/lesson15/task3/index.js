@@ -25,7 +25,7 @@ export const createLogger = () => {
       
       getRecords: function(filterStr) {
         const sortedMemory = memory.sort((a, b) => {
-          return b.dateTime - a.dateTime;
+          return b.dateTime - a.dateTime; 
         });
   
         if (filterStr === undefined) {

@@ -1,13 +1,7 @@
-let foo = 1; 
-
-function bar() { 
-    if (!foo) { 
-        let foo = 10; 
+const user = {
+    firstName: "John",
+    lastName: "Doe",
+    getFullName = () => {
+        return (`${this.firstName} ${this.lastName}`);
     } 
-
-    return foo;
 }
-
-export default foo = bar();
-
-console.log(foo);
