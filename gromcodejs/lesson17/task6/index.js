@@ -27,7 +27,9 @@ sayBruceName();
 
 /* ===> 2 <=== */
 const company = {
-   companyName: 'Microsoft'
+   companyName: 'Microsoft',
+   firstName: "Bob",
+   lastName: "Marley",
 };
 
 function greeting(firstName, lastName) {
