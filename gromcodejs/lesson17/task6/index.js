@@ -1,9 +1,9 @@
 /* ===> 1 <=== */
-export const student = {
+const student = {
    name: 'Tom',
 };
 
-export function sayName() {
+function sayName() {
    console.log(this.name);
 }
 
@@ -12,7 +12,7 @@ export function sayName() {
 * используйте .bind и ф-цию sayName
 */
 
-export default sayStudentName = sayName.bind(student);
+sayStudentName = sayName.bind(student);
 
 sayStudentName();
 
@@ -21,16 +21,16 @@ sayStudentName();
 * используйте ф-цию sayName и .bind с нужным объектом
 */
 
-export default sayBruceName = sayName.bind({name: "Bruce"});
+sayBruceName = sayName.bind({name: "Bruce"});
 
 sayBruceName();
 
 /* ===> 2 <=== */
-export const company = {
+const company = {
    companyName: 'Microsoft'
 };
 
-export function greeting(firstName, lastName) {
+function greeting(firstName, lastName) {
    console.log(`Hello, ${firstName} ${lastName}. Welcome to the ${this.companyName}`);
 }
 
@@ -41,18 +41,18 @@ export function greeting(firstName, lastName) {
 * specialGreeting не должна принимать ни одного аргумента
 */
 
-export default specialGreeting = greeting.bind(company, company.firstName, company.lastName);
+specialGreeting = greeting.bind(company, company.firstName, company.lastName);
 
 specialGreeting();
 
 /* ===> 3 <=== */
-export const country = {
+const country = {
    countryName: 'Ukraine',
    capital: 'Kyiv',
    population: 43000,
 };
 
-export function getPopulation(population) {
+function getPopulation(population) {
    return `Population in ${this.countryName} is ${population}`;
 }
 
@@ -64,12 +64,12 @@ export function getPopulation(population) {
 * getUkrainePopulation не должна принимать ни одного аргумента
 */
 
-export default getUkrainePopulation = getPopulation.bind(country, country.population);
+getUkrainePopulation = getPopulation.bind(country, country.population);
 
 console.log(getUkrainePopulation());
 
 /* ===> 4 <=== */
-export const transaction = {
+const transaction = {
    amount: 1200,
    operation: 'sell',
    currency: 'USD',
@@ -79,7 +79,7 @@ export const transaction = {
    }
 }
 
-export const anotherTransaction = {
+const anotherTransaction = {
    amount: 400,
    operation: 'buy',
    currency: 'USD',
@@ -93,6 +93,7 @@ export const anotherTransaction = {
 * printSpecialTransaction не должна принимать ни одного аргумента
 */
 
-export default printSpecialTransaction = transaction.printTransaction.bind(anotherTransaction);
+printSpecialTransaction = transaction.printTransaction.bind(anotherTransaction);
 
 printSpecialTransaction();
+export { sayStudentName, sayBruceName, specialGreeting, getUkrainePopulation, printSpecialTransaction};
