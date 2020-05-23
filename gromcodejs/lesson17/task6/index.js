@@ -96,4 +96,4 @@ const anotherTransaction = {
 printSpecialTransaction = transaction.printTransaction.bind(anotherTransaction);
 
 printSpecialTransaction();
-export { sayStudentName, sayBruceName, specialGreeting, getUkrainePopulation, printSpecialTransaction};
+export { sayStudentName, sayBruceName, specialGreeting, getUkrainePopulation, printSpecialTransaction };
