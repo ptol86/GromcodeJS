@@ -3,18 +3,18 @@ export const timer = {
    minsPassed: 0,
    intervalId: 0, 
 
-   startTimer() {
-      
+   startTimer: function startTimer() {
       intervalId = setInterval(function() {
-         this.secondsPassed += 1;
-
-         if (this.secondsPassed === 60) {
-             this.secondsPassed = 0;
-             this.minsPassed += 1;
-         }
-      }, 1000);
-      
-   },
+      this.secondsPassed++;
+      if (this.secondsPassed === 60) {
+          this.secondsPassed = 0;
+          this.minsPassed++;
+      }
+      console.log(this.secondsPassed);
+   }.bind(this), 1000);
+   
+  
+},
    
    getTime() {
       if (this.secondsPassed < 10) {
@@ -31,7 +31,7 @@ export const timer = {
    resetTimer() { 
       this.secondsPassed = 0;
       this.minsPassed = 0;
-  },
+   },
 
 }
 
