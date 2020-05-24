@@ -1,22 +1,22 @@
 export const timer = {
-   secondPassed: 0,
+   secondsPassed: 0,
    minsPassed: 0,
 
    startTimer () {
       
       setInterval(function () {
-         this.secondPassed += 1;
-      if (this.secondPassed === 60) {
-         this.secondPassed = 0;
+         this.secondsPassed += 1;
+      if (this.secondsPassed === 60) {
+         this.secondsPassed = 0;
          this.minsPassed += 1;}
          }, 1000);
       },
    
    getTime () {
-      if (this.secondPassed < 10) {
-         return `${this.minsPassed}:0${this.secondPassed}`; 
+      if (this.secondsPassed < 10) {
+         return `${this.minsPassed}:0${this.secondsPassed}`; 
       }
-      return `${this.minsPassed}:${this.secondPassed}`;
+      return `${this.minsPassed}:${this.secondsPassed}`;
       
    },
 
