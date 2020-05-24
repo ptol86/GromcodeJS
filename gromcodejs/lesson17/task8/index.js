@@ -2,7 +2,7 @@ export const timer = {
    secondsPassed: 0,
    minsPassed: 0,
 
-   startTimer () {
+   startTimer: function () {
       
       setInterval(function () {
          this.secondsPassed += 1;
