@@ -1,10 +1,12 @@
+"use strict";
+
 export const timer = {
    secondsPassed: 0,
    minsPassed: 0,
    intervalId: 0, 
 
    startTimer: function startTimer() {
-      intervalId = setInterval(function() {
+      this.intervalId = setInterval(function() {
       this.secondsPassed++;
       if (this.secondsPassed === 60) {
           this.secondsPassed = 0;
@@ -12,9 +14,7 @@ export const timer = {
       }
       console.log(this.secondsPassed);
    }.bind(this), 1000);
-   
-  
-},
+   },
    
    getTime() {
       if (this.secondsPassed < 10) {

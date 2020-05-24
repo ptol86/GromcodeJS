@@ -1,32 +1,38 @@
-const timer = {
-   secondPassed: 0,
-   minsPassed: 0,
-
-   startTimer () {
-      
-      setInterval(function () {this.secondPassed += 1;
-      if (this.secondPassed === 60) {
-         this.secondPassed = 0;
-         this.minsPassed += 1;}
-         console.log(this.secondPassed);
-         }, 1000);
-      },
-   
-   getTime () {
-      if (this.secondPassed < 10) {
-         return `${this.minsPassed}:0${this.secondPassed}`; 
-      }
-      return `${this.minsPassed}:${this.secondPassed}`;
-      
-   },
-
-   stopTimer () {
-      clearInterval(this);
+function calculator(a, b) {
+   switch(this.operation) {
+       case '+':
+           return a + b;
+       case '-':
+           return a - b;
+       case '/':
+           return a / b;
+       case '*':
+           return a * b;
+       default:
+           return NaN;
    }
-
 }
 
-// setInterval(func, 1000);
-// function stopTextColor() {
-//    clearInterval(nIntervId);
-//  }
+
+/*
+* Ф-ция multiplier должна быть создана на основе calculator
+* с использования .bind
+* и должна принимать 2 числа и возвращать из произведение
+*/
+// ...your code here
+
+multiplier = calculator.switch.bind(case '+');
+
+/*
+* Ф-ция summator должна быть создана на основе calculator
+* с использования .bind
+* и должна принимать 2 числа и возвращать из сумму
+*/
+// ...your code here
+
+/*
+* Ф-ция twice должна быть создана на основе calculator
+* с использования .bind
+* и должна принимать 1 число и возвращать это число умноженное на 2
+*/
+// ...your code here
