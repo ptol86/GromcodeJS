@@ -21,8 +21,7 @@ function calculator(a, b) {
 */
 // ...your code here
 
-multiplier = calculator.switch.bind(case '+');
-
+const multiplier = calculator.bind({operation: "*"});
 /*
 * Ф-ция summator должна быть создана на основе calculator
 * с использования .bind
