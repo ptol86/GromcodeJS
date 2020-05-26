@@ -1,10 +1,10 @@
 "use strict";
 
 
-export function User(name, age) {
+ function User(name, age) {
   this.name = name;
   this.age = age;
-  this.sayHi = function() {
+  this.prototype.sayHi = function() {
     console.log(`Hi, I am ${this.name}`);
   };
   this.requestNewPhoto = function () {
@@ -21,3 +21,6 @@ export function User(name, age) {
     else return false;
   }
 };
+const user2 = new User("Bob", 21);
+
+console.log(user2)
