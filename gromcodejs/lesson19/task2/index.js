@@ -1,26 +1,29 @@
 "use strict";
 
 
-export const vehicle = {
-  move() {
-    console.log(`${this.name} is moving`);
-  },
-  stop() {
-    console.log(`${this.name} stopped`);
-  },
+// const ship = {
+//   name: "Aurora",
+//   hasWheels: false,
+//   liftAnchorDown() {
+//     console.log(`Lifting anchor down`);
+//   },
+//   liftAnchorUp() {
+//     console.log(`Lifting anchor up`);
+//   },
+// };
+
+
+// function getOwnProps(obj) {
+//   let result = [];
+//   for(let prop in ship) {
+//     if (ship.hasOwnProperty(prop)) {
+//       result.push(prop);
+//     }
+//   };
+// }
+
+export function getOwnProps(obj) {
+  return Object.keys(obj);
+
 };
 
-export const ship = {
-  name: "Argo",
-  stopMachine() {
-    console.log(`${this.name} lifting anchor down`);
-    this.stop();
-  },
-  startMachine() {
-    console.log(`${this.name} lifting anchor up`);
-    this.move();
-  },
-  
-};
-
-Object.setPrototypeOf(ship, vehicle);
