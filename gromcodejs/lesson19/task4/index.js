@@ -1,6 +1,5 @@
-"use strict";
 
-const user = {
+export const user = {
   firstName: "John",
   lastName: "Doe",
   get fullName() {
@@ -14,4 +13,4 @@ const user = {
   },
 };
 
-export {user};
+ 
