@@ -13,17 +13,7 @@
 // };
 
 
-// function getOwnProps(obj) {
-//   let result = [];
-//   for(let prop in ship) {
-//     if (ship.hasOwnProperty(prop)) {
-//       result.push(prop);
-//     }
-//   };
-// }
-
 export function getOwnProps(obj) {
-  return Object.keys(obj);
-
+  return Object.keys(obj).filter((key) => typeof obj[key] !== "function");
 };
 
