@@ -14,10 +14,10 @@ function saveCalls(func) {
 };
 
   
-function test(a, b) {
-  return a + b;
-}
+// function test(a, b) {
+//   return a + b;
+// }
 
-const testWithMemory = saveCalls(test);
-console.log(testWithMemory(5, 2));
-console.log(testWithMemory.calls);
+// const testWithMemory = saveCalls(test);
+// console.log(testWithMemory(5, 2));
+// console.log(testWithMemory.calls);
