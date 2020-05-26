@@ -1,16 +1,17 @@
 "use strict";
 
 
- function User(name, age) {
+export function User(name, age) {
   this.name = name;
   this.age = age;
-  this.prototype.sayHi = function() {
+}
+  User.prototype.sayHi = function() {
     console.log(`Hi, I am ${this.name}`);
   };
-  this.requestNewPhoto = function () {
+  User.prototype.requestNewPhoto = function () {
     console.log(`New photo request was sent for ${this.name}`);
   }
-  this.setAge = function (newAge) {
+  User.prototype.setAge = function (newAge) {
     if(newAge >= 25) {
       console.log(`New photo request was sent for ${this.name}`);
   }
