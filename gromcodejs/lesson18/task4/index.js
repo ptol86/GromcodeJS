@@ -3,7 +3,7 @@
 //input: function;
 //output: creating arr calls of arguments function withMemory, returning function withMemory;
 
-function saveCalls(func) {
+export function saveCalls(func) {
   withMemory.calls = [];
   function withMemory() {
     withMemory.calls.push([...arguments])
