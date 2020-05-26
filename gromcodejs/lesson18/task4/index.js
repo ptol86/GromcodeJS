@@ -7,7 +7,7 @@ export function saveCalls(func) {
   withMemory.calls = [];
   function withMemory() {
     withMemory.calls.push([...arguments])
-    return func.call(this, ...arguments);
+    return func.call(this);
   }
   return withMemory;
 };
