@@ -4,7 +4,7 @@
 //output: creating arr calls of arguments function withMemory, returning function withMemory;
 
 
-const vehicle = {
+export const vehicle = {
   move() {
     console.log(`${this.name} is moving`);
   },
@@ -13,7 +13,7 @@ const vehicle = {
   },
 };
 
-const ship = {
+export const ship = {
   name: "Argo",
   stopMachine() {
     console.log(`${this.name} lifting anchor down`);
