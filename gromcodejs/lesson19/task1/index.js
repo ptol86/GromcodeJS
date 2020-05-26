@@ -1,8 +1,5 @@
 "use strict";
 
-//input: function;
-//output: creating arr calls of arguments function withMemory, returning function withMemory;
-
 
 export const vehicle = {
   move() {
