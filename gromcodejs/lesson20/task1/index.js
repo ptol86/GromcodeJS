@@ -1,13 +1,10 @@
-export class User {
+ class User {
   constructor(name, age) {
     this.name = name;
     this.age = age;
   }
   static createEmpty() {
-    return {
-    name: "",
-    age: null,
-    }
+    return new this("Balumba", 15);
   }
   sayHi() {
   console.log(`Hi, I am ${this.name}`);
@@ -30,5 +27,5 @@ export class User {
 // console.log(user1);
 
 // console.log(User.createEmpty());
-// const user2 = User.createEmpty();
-// console.log(user2);
+const user2 = User.createEmpty();
+console.log(user2);
