@@ -1,5 +1,5 @@
 
-export const user = {
+default export const user = {
   firstName: "Bob",
   lastName: "Marley",
   get fullName() {
@@ -12,5 +12,3 @@ export const user = {
     
   },
 };
-
- 
