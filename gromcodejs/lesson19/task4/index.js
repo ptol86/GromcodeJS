@@ -1,7 +1,7 @@
 
 export const user = {
-  firstName: "John",
-  lastName: "Doe",
+  firstName: "Bob",
+  lastName: "Marley",
   get fullName() {
     return `${this.firstName} ${this.lastName}`;
   },
