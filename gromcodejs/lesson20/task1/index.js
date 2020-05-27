@@ -1,4 +1,4 @@
-class User {
+export class User {
   constructor(name, age) {
     this.name = name;
     this.age = age;
@@ -30,5 +30,5 @@ class User {
 // console.log(user1);
 
 // console.log(User.createEmpty());
-const user2 = User.createEmpty();
-console.log(user2);
+// const user2 = User.createEmpty();
+// console.log(user2);
