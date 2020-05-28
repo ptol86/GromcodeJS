@@ -14,7 +14,7 @@ const compareObjects = (obj1, obj2) => {
       console.log(keyAndValueEqual);
       return false;
     } 
-}
+  }
   return true; 
 }
  
