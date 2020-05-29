@@ -4,13 +4,13 @@ export class User {
     this._name = name;
     this._sesssionId = sesssionId;
   }
-  get getId() {
+  get id() {
     return this._id;
   }
-  get getName() {
+  get name() {
     return this._name;
   }
-  get getSesssionId() {
+  get sesssionId() {
     return this._sesssionId;
   }
 }
@@ -19,27 +19,27 @@ export class UserRepository {
   constructor(users) {
     this._users = Object.freeze(users);
   }
-  getUsers() {
+  get users() {
     return this._users;
   }
   getUserNames() {
     let arr = [];
     for (let user of this._users) {
-      arr.push(user.getName);
+      arr.push(user.name);
     }
     return arr;
   }
   getUserIds() {
     let arr = [];
     for (let user of this._users) {
-      arr.push(user.getId);
+      arr.push(user.id);
     }
     return arr;
   }
   getUserNameById(id) {
     for (let user of this._users) {
-      if (user.getId === id) {
-        return user.getName;
+      if (user.id === id) {
+        return user.name;
       }
     }
   }
@@ -52,7 +52,7 @@ export class UserRepository {
 // let user2 = new User("1213", "Lexaa", "a2ssd");
 
 // console.log(user);
-// console.log(user.getId);
+// console.log(user.id);
 
 // let repository = new UserRepository([user, user2]);
 
