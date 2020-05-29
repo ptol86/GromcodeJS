@@ -1,8 +1,8 @@
 export class User {
-  constructor(id, name, sesssionId) {
+  constructor(id, name, sessionId) {
     this._id = id;
     this._name = name;
-    this._sesssionId = sesssionId;
+    this._sessionId = sessionId;
   }
   get id() {
     return this._id;
@@ -10,8 +10,8 @@ export class User {
   get name() {
     return this._name;
   }
-  get sesssionId() {
-    return this._sesssionId;
+  get sessionId() {
+    return this._sessionId;
   }
 }
 
