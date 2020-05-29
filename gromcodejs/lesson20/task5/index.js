@@ -1,50 +1,45 @@
 export class User {
-  #id;
-  #name;
-  #sesssionId;
-
   constructor(id, name, sesssionId) {
-    this.#id = id;
-    this.#name = name;
-    this.#sesssionId = sesssionId;
+    this._id = id;
+    this._name = name;
+    this._sesssionId = sesssionId;
   }
-  getId() {
-    return this.#id;
+  get getId() {
+    return this._id;
   }
-  getName() {
-    return this.#name;
+  get getName() {
+    return this._name;
   }
-  getSesssionId() {
-    return this.#sesssionId;
+  get getSesssionId() {
+    return this._sesssionId;
   }
 }
 
 export class UserRepository {
-  #users;
   constructor(users) {
-    this.#users = Object.freeze(users);
+    this._users = Object.freeze(users);
   }
   getUsers() {
-    return this.#users;
+    return this._users;
   }
   getUserNames() {
     let arr = [];
-    for (let user of this.#users) {
-      arr.push(user.getName());
+    for (let user of this._users) {
+      arr.push(user.getName);
     }
     return arr;
   }
   getUserIds() {
     let arr = [];
-    for (let user of this.#users) {
-      arr.push(user.getId());
+    for (let user of this._users) {
+      arr.push(user.getId);
     }
     return arr;
   }
   getUserNameById(id) {
-    for (let user of this.#users) {
-      if (user.getId() === id) {
-        return user.getName();
+    for (let user of this._users) {
+      if (user.getId === id) {
+        return user.getName;
       }
     }
   }
@@ -57,7 +52,7 @@ export class UserRepository {
 // let user2 = new User("1213", "Lexaa", "a2ssd");
 
 // console.log(user);
-// console.log(user.getId());
+// console.log(user.getId);
 
 // let repository = new UserRepository([user, user2]);
 
