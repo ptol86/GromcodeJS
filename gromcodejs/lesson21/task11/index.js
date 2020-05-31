@@ -10,8 +10,8 @@ export const manageClasses = () => {
 
   const four = document.querySelector(".four");
   if ([...four.classList].includes("some-class")) {
-  four.classList.add("another-class");
+  four.classList.toggle("another-class");
   }
 }
 
-manageClasses();
+// manageClasses();
