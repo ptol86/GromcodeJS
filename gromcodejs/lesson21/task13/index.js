@@ -4,4 +4,4 @@ export const getSection = (num) => {
   return parent.dataset.section;
 }
 
-console.log(getSection(2));
+// console.log(getSection(2));
