@@ -3,7 +3,7 @@ export const squaredNumbers = () => {
 
   list.forEach((el) => {
     const squaredNumber = el.dataset.number**2;
-    el.dataset.dataSquaredNumber = squaredNumber;
+    el.dataset.squaredNumber = squaredNumber;
   });
   
 }
