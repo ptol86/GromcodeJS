@@ -34,7 +34,7 @@ const clearTarget = () => {
 
 clearBtn.addEventListener("click", clearTarget);
 
-const attachHandlers = document.querySelector(".remove-handlers-btn");
+const attachHandlers = document.querySelector(".attach-handlers-btn");
 
 const attachTarget = () => {
   divElem.addEventListener("click", logGreyDiv, true);
@@ -49,7 +49,7 @@ const attachTarget = () => {
 
 attachHandlers.addEventListener("click", attachTarget);
 
-const removeHandlers = document.querySelector(".attach-handlers-btn");
+const removeHandlers = document.querySelector(".remove-handlers-btn");
 
 const removeTarget = () => {
   divElem.removeEventListener("click", logGreyDiv, true);
