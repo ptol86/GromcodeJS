@@ -6,4 +6,4 @@ const handleClick = (event) => {
     console.log(event.target.dataset.pageNumber);
 };
 
-btns.forEach(el => addEventListener("click", handleClick));
+btns.forEach(el => el.addEventListener("click", handleClick));
