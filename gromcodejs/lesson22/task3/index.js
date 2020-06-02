@@ -2,8 +2,8 @@
 
 const textInput = document.querySelector(`input[type="text"`);
 
-const changeInput = () => {
-    alert("done");
+const returnInput = () => {
+    console.log(textInput.value);
 };
 
-alertBtn.addEventListener("click", alertMsg);
+textInput.addEventListener("change", returnInput);
