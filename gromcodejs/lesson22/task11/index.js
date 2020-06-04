@@ -42,12 +42,7 @@ function updateTask(event) {
 
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
   
-  if (task.done === true) {
-    task.done = false;
-  }
-  else {
-    task.done = true;
-  }
+  task.done = !task.done;
 
   
   renderTasks(tasks);
