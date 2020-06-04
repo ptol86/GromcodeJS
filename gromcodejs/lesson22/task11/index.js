@@ -6,11 +6,11 @@
 // 6. create handler - create task object and put to the array and render tasks +++
 
 let tasks = [
-  { text: 'Buy milk', done: false, id: "1"},
-  { text: 'Pick up Tom from airport', done: false, id: "2"}, 
-  { text: 'Visit party',  done: false, id: "3"},
-  { text: 'Visit doctor', done: true, id: "4"},
-  { text: 'Buy meat', done: true, id: "5"},
+  // { text: 'Buy milk', done: false, id: "1"},
+  // { text: 'Pick up Tom from airport', done: false, id: "2"}, 
+  // { text: 'Visit party',  done: false, id: "3"},
+  // { text: 'Visit doctor', done: true, id: "4"},
+  // { text: 'Buy meat', done: true, id: "5"},
 ];
 
 const listElem = document.querySelector('.list');
@@ -66,6 +66,7 @@ function updateTask(event) {
 }
 //renderTasks(tasks);
 const createBtn = document.querySelector('.btn');
+
 createBtn.addEventListener('click', createTask);
 
 function createTask(event) {
@@ -75,12 +76,12 @@ if (!input.value) return;
   const newTask = {
       text: input.value,
       done: false,
-      id: toString(Math.floor(Math.random() * (1000 - 1 + 1)) + 1),
+      id: `${(Math.floor(Math.random() * (1000 - 1 + 1)) + 1)}`,
   }
   tasks.push(newTask);
   input.value = '';
   renderTasks(tasks);
-  // console.log(tasks); 
+  console.log(tasks); 
 }
 
 
