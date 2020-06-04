@@ -21,7 +21,7 @@ listElem.innerHTML = '';
           checkbox.classList.add('list__item-checkbox');
           if (task.done) {
               listItemElem.classList.add('list__item_done');
-          }
+          };
           listItemElem.append(checkbox, task.text);
           return listItemElem;
       });
@@ -32,6 +32,8 @@ renderTasks(tasks);
 //update task
 listElem.addEventListener('click', updateTask);
 
+// const checkbox = document.querySelector('.list__item-checkbox');
+
 function updateTask(event) {
   
   const classes = event.target.classList;
@@ -40,7 +42,13 @@ function updateTask(event) {
 
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
   
-  task.done = true
+  if (task.done === true) {
+    task.done = false;
+  }
+  else {
+    task.done = true;
+  }
+
   
   renderTasks(tasks);
   
