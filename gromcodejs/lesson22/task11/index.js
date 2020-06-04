@@ -40,9 +40,8 @@ function updateTask(event) {
 
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
   
-  if (task) {
-      task.done = true
-      };
+  task.done = true
+  
   renderTasks(tasks);
   
 }
