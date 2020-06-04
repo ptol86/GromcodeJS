@@ -42,8 +42,8 @@ function updateTask(event) {
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
   console.log(task);
   if (task) {
-      tasks.map(el => {
-          if (el.id == event.target.dataset.taskId) {
+      tasks.forEach(el => {
+          if (el.id === event.target.dataset.taskId) {
               el.done = true;
           }
       });
