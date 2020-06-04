@@ -6,11 +6,11 @@
 // 6. create handler - create task object and put to the array and render tasks +++
 
 let tasks = [
-  // { text: 'Buy milk', done: false, id: "1"},
-  // { text: 'Pick up Tom from airport', done: false, id: "2"}, 
-  // { text: 'Visit party',  done: false, id: "3"},
-  // { text: 'Visit doctor', done: true, id: "4"},
-  // { text: 'Buy meat', done: true, id: "5"},
+  { text: 'Buy milk', done: false, id: "1"},
+  { text: 'Pick up Tom from airport', done: false, id: "2"}, 
+  { text: 'Visit party',  done: false, id: "3"},
+  { text: 'Visit doctor', done: true, id: "4"},
+  { text: 'Buy meat', done: true, id: "5"},
 ];
 
 const listElem = document.querySelector('.list');
@@ -42,12 +42,11 @@ listElem.innerHTML = '';
 listElem.addEventListener('click', updateTask);
 
 function updateTask(event) {
-  // console.log(event);
-  //console.log(event.target);
+  
   const classes = event.target.classList;
-  // console.log(classes)
+  
   if(!classes.contains('list__item-checkbox')) return;
-  // console.log(event.target.dataset);
+  
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
   if (task) {
     tasks.map(el => {
@@ -57,14 +56,9 @@ function updateTask(event) {
     });
     renderTasks(tasks);
   }
-  // console.log(task);
-  //todo update task
-  //updateTask();
-  //todo render tasks again
-  //renderTasks(tasks);
-  // console.log('DONE');
+  
 }
-//renderTasks(tasks);
+
 const createBtn = document.querySelector('.btn');
 
 createBtn.addEventListener('click', createTask);
@@ -76,7 +70,7 @@ if (!input.value) return;
   const newTask = {
       text: input.value,
       done: false,
-      id: `${(Math.floor(Math.random() * (1000 - 1 + 1)) + 1)}`,
+      id: `${tasks.length +1}`,
   }
   tasks.push(newTask);
   input.value = '';
