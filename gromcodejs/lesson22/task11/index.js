@@ -31,24 +31,20 @@ listElem.innerHTML = '';
 renderTasks(tasks);
 //update task
 listElem.addEventListener('click', updateTask);
+
 function updateTask(event) {
-  //console.log(event);
-  //console.log(event.target);
+  
   const classes = event.target.classList;
-  // console.log(classes);
+  
   if(!classes.contains('list__item-checkbox')) return;
-  //console.log(event.target.dataset);
-      //console.log(event.target.dataset.taskId);
+
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
-  console.log(task);
+  
   if (task) {
-      tasks.forEach(el => {
-          if (el.id === event.target.dataset.taskId) {
-              el.done = true;
-          }
-      });
-      renderTasks(tasks);
-  }
+      task.done = true
+      };
+  renderTasks(tasks);
+  
 }
 //console.log(task);
   //todo update task
