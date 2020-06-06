@@ -12,17 +12,6 @@ const isEmail = value => value.includes("@")
 ? undefined 
 : "Should be an email";
 
-const onEmailChange = (event) => {
-  const errorText = validate("email", event.target.value);
-    emailErrorElem.textContent = errorText;
-}
-
-emailInputElem.addEventListener("input", onEmailChange);
-
-const onPasswordChange = (event) => {
-  const errorText = validate("password", event.target.value);
-    passwordErrorElem.textContent = errorText;
-}
 const validatorsByField = {
   email: [isRequired, isEmail],
   password: [isRequired],
@@ -35,6 +24,19 @@ const validate = (fieldName, value) => {
     .filter(errorText => errorText)
     .join(', ')
 }
+
+const onEmailChange = (event) => {
+  const errorText = validate("email", event.target.value);
+    emailErrorElem.textContent = errorText;
+}
+
+emailInputElem.addEventListener("input", onEmailChange);
+
+const onPasswordChange = (event) => {
+  const errorText = validate("password", event.target.value);
+    passwordErrorElem.textContent = errorText;
+}
+
 
 passwordInputElem.addEventListener("input", onPasswordChange);
 
