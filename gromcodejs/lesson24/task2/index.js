@@ -5,7 +5,7 @@ const formatter = new Intl.DateTimeFormat("en", {
   hour12: false,
 });
 
-const getTime = date => formatter.format(date);
+export const getGreenwitchTime = date => formatter.format(date);
 
 
-console.log(getTime(new Date()));
+// console.log(getTime(new Date()));
