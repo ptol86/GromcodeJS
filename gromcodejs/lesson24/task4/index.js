@@ -1,17 +1,25 @@
 let tasks = [
-  { text: 'Buy milk', done: false, id: '1', data: new Date},
-  { text: 'Pick up Tom from airport', done: false, id: '2', data: new Date}, 
-  { text: 'Visit party',  done: false, id: '3', data: new Date},
-  { text: 'Visit doctor', done: true, id: '4', data: new Date},
-  { text: 'Buy meat', done: true, id: '5', data: new Date},
+  { text: 'Buy milk', done: false, id: '1', addDate: new Date, doneDate: null},
+  { text: 'Pick up Tom from airport', done: false, id: '2', addDate: new Date, doneDate: null}, 
+  { text: 'Visit party',  done: false, id: '3', addDate: new Date, doneDate: null},
+  { text: 'Visit doctor', done: true, id: '4', addDate: new Date, doneDate: null},
+  { text: 'Buy meat', done: true, id: '5', addDate: new Date, doneDate: null},
 ];
 const listElem = document.querySelector('.list');
 const renderTasks = (tasksList) => {
 listElem.innerHTML = '';
   const tasksElems = tasksList
       .slice()
-      .sort((a, b) => b.data - a.data)
-      .sort((a, b) => a.done - b.done)
+      // .sort((a, b) => b.data - a.data)
+      .sort((a, b) => {
+        if (a.done - b.done !== 0) {
+        return a.done - b.done;
+        }
+        if (a.done === true) {
+          return (b.doneDate - a.doneDate);
+        }
+          return (b.addDate - a.addDate);
+      })
       .map((task) => {
           const listItemElem = document.createElement('li');
           listItemElem.classList.add('list__item');
@@ -22,7 +30,8 @@ listElem.innerHTML = '';
           checkbox.classList.add('list__item-checkbox');
           if (task.done) {
               listItemElem.classList.add('list__item_done');
-          };
+          }
+          
           listItemElem.append(checkbox, task.text);
           return listItemElem;
       });
@@ -32,10 +41,6 @@ listElem.innerHTML = '';
 renderTasks(tasks);
 //update task
 listElem.addEventListener('click', updateTask);
-
-function zalupaSort(params) {
-  
-}
 
 // const checkbox = document.querySelector('.list__item-checkbox');
 
@@ -48,7 +53,8 @@ function updateTask(event) {
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
   
   task.done = !task.done;
-  task.data = new Date();
+  task.addDate = new Date();
+  task.doneDate = new Date();
 
   
   renderTasks(tasks);
@@ -67,7 +73,7 @@ function createTask(event) {
   console.log(event);
   const input = document.querySelector('.task-input');
 if (!input.value) return;
-  const newTask = { text: input.value, done: false, id: `${tasks.length + 1}`, data: new Date()}
+  const newTask = { text: input.value, done: false, id: `${tasks.length + 1}`, addDate: new Date, doneDate: null}
   tasks.push(newTask)
   input.value = '';
   renderTasks(tasks);
