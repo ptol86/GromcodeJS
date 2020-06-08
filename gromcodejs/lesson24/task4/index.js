@@ -29,7 +29,7 @@ listElem.innerHTML = '';
       //console.log(tasksElems)
   listElem.append(...tasksElems);
 };
-// renderTasks(tasks);
+renderTasks(tasks);
 //update task
 listElem.addEventListener('click', updateTask);
 
