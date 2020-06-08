@@ -1,16 +1,25 @@
 let tasks = [
-  { text: 'Buy milk', done: false, id: '1'},
-  { text: 'Pick up Tom from airport', done: false, id: '2'}, 
-  { text: 'Visit party',  done: false, id: '3'},
-  { text: 'Visit doctor', done: true, id: '4'},
-  { text: 'Buy meat', done: true, id: '5'},
+  { text: 'Buy milk', done: false, id: '1', addDate: new Date, doneDate: null},
+  { text: 'Pick up Tom from airport', done: false, id: '2', addDate: new Date, doneDate: null}, 
+  { text: 'Visit party',  done: false, id: '3', addDate: new Date, doneDate: null},
+  { text: 'Visit doctor', done: true, id: '4', addDate: new Date, doneDate: null},
+  { text: 'Buy meat', done: true, id: '5', addDate: new Date, doneDate: null},
 ];
 const listElem = document.querySelector('.list');
 const renderTasks = (tasksList) => {
 listElem.innerHTML = '';
   const tasksElems = tasksList
       .slice()
-      .sort((a, b) => a.done - b.done)
+      // .sort((a, b) => b.data - a.data)
+      .sort((a, b) => {
+        if (a.done - b.done !== 0) {
+        return a.done - b.done;
+        }
+        if (a.done === true) {
+          return (b.doneDate - a.doneDate);
+        }
+          return (b.addDate - a.addDate);
+      })
       .map((task) => {
           const listItemElem = document.createElement('li');
           listItemElem.classList.add('list__item');
@@ -21,7 +30,8 @@ listElem.innerHTML = '';
           checkbox.classList.add('list__item-checkbox');
           if (task.done) {
               listItemElem.classList.add('list__item_done');
-          };
+          }
+          
           listItemElem.append(checkbox, task.text);
           return listItemElem;
       });
@@ -43,6 +53,8 @@ function updateTask(event) {
   const task = tasks.find(task => task.id === event.target.dataset.taskId);
   
   task.done = !task.done;
+  task.addDate = new Date();
+  task.doneDate = new Date();
 
   
   renderTasks(tasks);
@@ -56,11 +68,12 @@ function updateTask(event) {
   //console.log('DONE');
 const createBtn = document.querySelector('.btn');
 createBtn.addEventListener('click', createTask);
+
 function createTask(event) {
   console.log(event);
   const input = document.querySelector('.task-input');
 if (!input.value) return;
-  const newTask = { text: input.value, done: false, id: `${tasks.length + 1}` }
+  const newTask = { text: input.value, done: false, id: `${tasks.length + 1}`, addDate: new Date, doneDate: null}
   tasks.push(newTask)
   input.value = '';
   renderTasks(tasks);

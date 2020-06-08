@@ -1,9 +1,9 @@
 let tasks = [
-  { text: 'Buy milk', done: false, id: '1', data: new Date()},
-  { text: 'Pick up Tom from airport', done: false, id: '2', data: new Date()}, 
-  { text: 'Visit party',  done: false, id: '3', data: new Date()},
-  { text: 'Visit doctor', done: true, id: '4', data: new Date()},
-  { text: 'Buy meat', done: true, id: '5', data: new Date()},
+  { text: 'Buy milk', done: false, id: '1', data: new Date},
+  { text: 'Pick up Tom from airport', done: false, id: '2', data: new Date}, 
+  { text: 'Visit party',  done: false, id: '3', data: new Date},
+  { text: 'Visit doctor', done: true, id: '4', data: new Date},
+  { text: 'Buy meat', done: true, id: '5', data: new Date},
 ];
 const listElem = document.querySelector('.list');
 const renderTasks = (tasksList) => {
@@ -32,6 +32,10 @@ listElem.innerHTML = '';
 renderTasks(tasks);
 //update task
 listElem.addEventListener('click', updateTask);
+
+function zalupaSort(params) {
+  
+}
 
 // const checkbox = document.querySelector('.list__item-checkbox');
 
