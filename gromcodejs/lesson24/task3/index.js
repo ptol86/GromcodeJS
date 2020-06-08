@@ -1,15 +1,20 @@
-export function getDiff(startDate, endDate) {
-  const a = new Date(startDate);
-  const b = new Date(endDate);
-  
+function getDiff(startDate, endDate) {
+  const diffMs = (Math.abs((new Date(startDate) - new Date(endDate))));
+  // console.log(diff/1000/60/60);
   const toDayFormula = 24 * 60 * 60 * 1000; // hours * min * sec * millisec
-  const daysDiff = Math.floor(Math.abs((a - b) / toDayFormula));
+  const daysDiff = Math.floor(Math.abs((diffMs) / toDayFormula));
   // console.log(daysDiff);
-  const hoursDiff = Math.abs(a.getHours() - b.getHours());
+  const a = (diffMs) % toDayFormula;
+  // console.log(a)
+  const hoursDiff = Math.floor(a / (60 * 60 *1000));
   // console.log(hoursDiff);
-  const minutesDiff = Math.abs(a.getMinutes() - b.getMinutes());
+  const b = a % ( 60 * 60 *1000);
+  // console.log(b)
+  const minutesDiff = Math.floor(b / (60 *1000));
   // console.log(minutesDiff);
-  const secondsDiff = Math.abs(a.getSeconds() - b.getSeconds());
+  const c = b % (60 *1000);
+  // console.log(c)
+  const secondsDiff = Math.floor(c / 1000);
   // console.log(secondsDiff);
   return `${daysDiff}d ${hoursDiff}h ${minutesDiff}m ${secondsDiff}s`;
   
