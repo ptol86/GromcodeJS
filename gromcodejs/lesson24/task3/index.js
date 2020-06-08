@@ -1,4 +1,4 @@
-function getDiff(startDate, endDate) {
+export function getDiff(startDate, endDate) {
   const diffMs = (Math.abs((new Date(startDate) - new Date(endDate))));
   // console.log(diff/1000/60/60);
   const toDayFormula = 24 * 60 * 60 * 1000; // hours * min * sec * millisec
