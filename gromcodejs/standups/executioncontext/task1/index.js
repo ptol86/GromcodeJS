@@ -12,7 +12,7 @@
 export const timer = {
    secondsPassed: 0,
    minsPassed: 0,
-   
+   intervalId: null,
   //  startTimer() {
 
           // loose context
@@ -27,7 +27,7 @@ export const timer = {
   //  },
 
    startTimer() {
-      let intervalId = setInterval(() => {
+      this.intervalId = setInterval(() => {
         this.secondsPassed += 1;
         //  console.log(this.secondsPassed);
         if (this.secondsPassed === 60) {
