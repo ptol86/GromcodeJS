@@ -9,7 +9,7 @@
 */ 
 // let secondsPassed = 10;
 
-const timer = {
+export const timer = {
    secondsPassed: 0,
    minsPassed: 0,
    
