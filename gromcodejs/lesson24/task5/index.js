@@ -1,4 +1,4 @@
-function studentsBirthDays(students) {
+export function studentsBirthDays(students) {
     const result = {};
     const monthDictionary = {
       0: "Jan",
