@@ -1,6 +1,6 @@
 // calc(3).add(2).mult(4).div(10).subtract(5).result(); -3
 
-const calc = initValue => {
+export const calc = initValue => {
   let result = initValue;
 
   const calculator = {
