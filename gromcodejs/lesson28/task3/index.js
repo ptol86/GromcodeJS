@@ -1,11 +1,10 @@
-// const sum = (a, b) => {
-//   a + b;
-// }
 
-const sum = a => b => a + b;
+export const mult = a => b => a * b;
 
-const add3 = sum(3);
+export const twice = mult(2);
 
-const result = add3(5);
+export const triple = mult(3);
 
-console.log(result);
+// console.log(twice(7));
+
+// console.log(triple(7))
