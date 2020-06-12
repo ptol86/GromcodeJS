@@ -1,4 +1,4 @@
-const shmoment = initValue => {
+export const shmoment = initValue => {
     let resultDate = new Date(initValue);
     console.log(resultDate);
     
