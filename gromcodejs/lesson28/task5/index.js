@@ -1,5 +1,5 @@
 export const shmoment = initValue => {
-    let result = initValue;
+    let result = new Date(initValue);
     console.log(result);
     
     const dictGetters = {
