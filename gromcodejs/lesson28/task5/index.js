@@ -1,52 +1,56 @@
-//compose
-
-// const add3 = value => value +3;
-// const mult2 = value => value * 2;
-// const div4 = value => value / 4;
-
-
-export const compose = (...funcs) => value => {
-    return funcs.reduce((acc, func) => func(acc), value)
-}
-
-// const doEverything = compose(
-//     add3,
-//     mult2,
-//     div4,
-// );
-
-// console.log(doEverything(3));
-
-// calc(3).add(2).mult(4).div(10).subtract(5).result(); -3
-
-export const calc = initValue => {
+export const shmoment = initValue => {
     let result = initValue;
-  
-    const calculator = {
-      add(value) {
-        result += value;
-        return calculator;
-      },
-      mult(value) {
-        result *= value;
+    console.log(result);
+    
+    const dictGetters = {
+      "minutes": result.getMinutes(),
+      "hours": result.getHours(),
+      "seconds": result.getSeconds(),
+      "milliseconds": result.getMilliseconds(),
+      "years": result.getFullYear(),
+      "months": result.getMonth(),
+      "days": result.getDate(),
+    }
+    const dictSetters = {
+      "minutes":  setMinutes = (arg) => {
+    return result.setMinutes(arg);
+    },
+      "hours":  setHours = (arg) => {
+    return result.setHours(arg);
+    },
+      "seconds":  setSeconds = (arg) => {
+    return result.setSeconds(arg);
+    },
+      "milliseconds":  setMilliseconds = (arg) => {
+    return result.setMilliseconds(arg);
+    },
+      "years":  setFullYear = (arg) => {
+    return result.setFullYear(arg);
+    },
+      "months":  setMonth = (arg) => {
+    return result.setMonth(arg);
+    },
+      "days":  setDate = (arg) => {
+    return result.setDate(arg);
+    },
+    }
+   
+    const dateCalculator = {
+      add(typeOfData, value) {
+        dictSetters[typeOfData](dictGetters[typeOfData]+value);
+        
         return this;
       },
-      subtract(value) {
-        result -= value;
+      subtract(typeOfData, value) {
+        dictSetters[typeOfData](dictGetters[typeOfData]-value);
+        
         return this;
       },
-      div(value) {
-        result /= value;
-        return this;
-      },
+    
       result() {
         return result;
       },
     };
-  
-    return calculator;
+    // console.log(result.getMinutes());
+    return dateCalculator;
   }
-  
-  // const result = calc(3).add(2).mult(4).div(10).subtract(5).result(); -3
-  
-  // console.log(result);
