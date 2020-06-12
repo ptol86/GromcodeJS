@@ -1,37 +1,37 @@
-export const shmoment = initValue => {
-    let result = new Date(initValue);
-    console.log(result);
+const shmoment = initValue => {
+    let resultDate = new Date(initValue);
+    console.log(resultDate);
     
     const dictGetters = {
-      "minutes": result.getMinutes(),
-      "hours": result.getHours(),
-      "seconds": result.getSeconds(),
-      "milliseconds": result.getMilliseconds(),
-      "years": result.getFullYear(),
-      "months": result.getMonth(),
-      "days": result.getDate(),
+      "minutes": resultDate.getMinutes(),
+      "hours": resultDate.getHours(),
+      "seconds": resultDate.getSeconds(),
+      "milliseconds": resultDate.getMilliseconds(),
+      "years": resultDate.getFullYear(),
+      "months": resultDate.getMonth(),
+      "days": resultDate.getDate(),
     }
     const dictSetters = {
       "minutes":  setMinutes = (arg) => {
-    return result.setMinutes(arg);
+    return resultDate.setMinutes(arg);
     },
       "hours":  setHours = (arg) => {
-    return result.setHours(arg);
+    return resultDate.setHours(arg);
     },
       "seconds":  setSeconds = (arg) => {
-    return result.setSeconds(arg);
+    return resultDate.setSeconds(arg);
     },
       "milliseconds":  setMilliseconds = (arg) => {
-    return result.setMilliseconds(arg);
+    return resultDate.setMilliseconds(arg);
     },
       "years":  setFullYear = (arg) => {
-    return result.setFullYear(arg);
+    return resultDate.setFullYear(arg);
     },
       "months":  setMonth = (arg) => {
-    return result.setMonth(arg);
+    return resultDate.setMonth(arg);
     },
       "days":  setDate = (arg) => {
-    return result.setDate(arg);
+    return resultDate.setDate(arg);
     },
     }
    
@@ -48,9 +48,9 @@ export const shmoment = initValue => {
       },
     
       result() {
-        return result;
+        return resultDate;
       },
     };
-    // console.log(result.getMinutes());
+    // console.log(resultDate.getMinutes());
     return dateCalculator;
   }
