@@ -1,56 +1,40 @@
-export const shmoment = initValue => {
-    let resultDate = new Date(initValue);
-    console.log(resultDate);
-    
-    const dictGetters = {
-      "minutes": resultDate.getMinutes(),
-      "hours": resultDate.getHours(),
-      "seconds": resultDate.getSeconds(),
-      "milliseconds": resultDate.getMilliseconds(),
-      "years": resultDate.getFullYear(),
-      "months": resultDate.getMonth(),
-      "days": resultDate.getDate(),
-    }
-    const dictSetters = {
-      "minutes":  setMinutes = (arg) => {
-    return resultDate.setMinutes(arg);
-    },
-      "hours":  setHours = (arg) => {
-    return resultDate.setHours(arg);
-    },
-      "seconds":  setSeconds = (arg) => {
-    return resultDate.setSeconds(arg);
-    },
-      "milliseconds":  setMilliseconds = (arg) => {
-    return resultDate.setMilliseconds(arg);
-    },
-      "years":  setFullYear = (arg) => {
-    return resultDate.setFullYear(arg);
-    },
-      "months":  setMonth = (arg) => {
-    return resultDate.setMonth(arg);
-    },
-      "days":  setDate = (arg) => {
-    return resultDate.setDate(arg);
-    },
-    }
-   
-    const dateCalculator = {
-      add(typeOfData, value) {
-        dictSetters[typeOfData](dictGetters[typeOfData]+value);
-        
-        return this;
-      },
-      subtract(typeOfData, value) {
-        dictSetters[typeOfData](dictGetters[typeOfData]-value);
-        
-        return this;
-      },
-    
-      result() {
-        return resultDate;
-      },
+const getMethodsNames = {
+    years: 'getFullYear',
+    months: 'getMonth',
+    days: 'getDate',
+    hours: 'getHours',
+    minutes: 'getMinutes',
+    seconds: 'getSeconds',
+    milliseconds: 'getMilliseconds',
+}
+const setMethodsNames = {
+    years: 'setFullYear',
+    months: 'setMonth',
+    days: 'setDate',
+    hours: 'setHours',
+    minutes: 'setMinutes',
+    seconds: 'setSeconds',
+    milliseconds: 'setMilliseconds',
+}
+// console.log(setMethodsNames["milliseconds"])
+export const shmoment = (date) => {
+    let result = new Date(date);
+    const calculator = {
+        add(units, value) {
+            const currentUnitValue = result[getMethodsNames[units]]();
+            result = new Date(result[setMethodsNames[units]](currentUnitValue + value));
+            return this;
+        },
+        subtract(units, value) {
+            return this.add(units, -value);
+        },
+        result() {
+            return result;
+        }
     };
-    // console.log(resultDate.getMinutes());
-    return dateCalculator;
-  }
+    return calculator;
+}
+//   let a = shmoment(new Date(2020, 0, 7, 17, 17, 17)).add("minutes", 22).result();
+//   console.log(a);
+  // shmoment(new Date(2020, 6, 8, 1, 18, 17)).add('minutes', 6).add('days', 8).subtract('years', 1).result(); // ... Jan 15 2019 17:19:17 ...
+// .add("hours", 2).add("seconds", 2).add("milliseconds", 2000).subtract("years", 3).subtract("months", 3).subtract("days", 3)
