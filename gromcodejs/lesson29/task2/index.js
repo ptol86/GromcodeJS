@@ -15,3 +15,5 @@ const pinger = (num, period) => {
     // setTimeout(() => {
     // }, num * period);
 }
+
+// pinger(5, 1000);
