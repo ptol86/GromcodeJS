@@ -1,5 +1,5 @@
 //add image
-export const addImage = imgSrc => {
+ const addImage = imgSrc => {
     const p = new Promise((resolve, reject) => {
         const imgElem = document.createElement('img');
     imgElem.setAttribute("alt", "My Photo");
@@ -15,19 +15,20 @@ export const addImage = imgSrc => {
     }
     imgElem.addEventListener("load", onImageLoaded);
     
-    imgElem.addEventListener("error", () => reject(new Error("Image load failed")));
+    imgElem.addEventListener("error", () => reject(new Error("Image load zalupa")));
     })
     return p;
 }
 
 
 
-const imgSrc = "https://gromcoe.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson22/hw2/example-599px.jpg";
+const imgSrc = "https://gromcde.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson22/hw2/example-599px.jpg";
 
 const resultPromise = addImage(imgSrc);
 
 
-resultPromise.then(data => console.log(data)).catch(error => console.log(error));
+resultPromise.then(data => console.log(data))
+.catch(error => console.log(error));
 
 
 

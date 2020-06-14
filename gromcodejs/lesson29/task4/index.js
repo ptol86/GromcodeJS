@@ -2,7 +2,7 @@ export const requestUserData = (userId, callback) => {
   
   setTimeout(() => { 
     if (userId === "broken") {
-        callback(`Failed to load user data`);
+        callback(null, `Failed to load user data`);
         return;
     }
 
@@ -17,7 +17,7 @@ export const requestUserData = (userId, callback) => {
   }, Math.ceil(Math.random()*3000));
 }
 
-const callback1 = (arg) => {
+const callback1 = (a, arg) => {
     return {userId: arg,
       email: `${arg}@example.com`}
 };
