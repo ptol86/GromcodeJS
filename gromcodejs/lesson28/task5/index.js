@@ -21,7 +21,6 @@ export const shmoment = (date) => {
     let result = new Date(date);
     const calculator = {
         add(units, value) {
-            const currentUnitValue = result[getMethodsNames[units]]();
             result = new Date(result[setMethodsNames[units]](currentUnitValue + value));
             return this;
         },
