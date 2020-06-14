@@ -11,7 +11,7 @@ export const addImage = imgSrc => {
     const onImageLoaded = () => {
         const {width, height} = imgElem;
         console.log(width, height);
-        resolve(null, { width, height });
+        resolve({ width, height });
     }
     imgElem.addEventListener("load", onImageLoaded);
     
@@ -22,13 +22,15 @@ export const addImage = imgSrc => {
 
 
 
-const imgSrc = "https://grocode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson22/hw2/example-599px.jpg";
+const imgSrc = "https://gromcoe.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson22/hw2/example-599px.jpg";
 
 const resultPromise = addImage(imgSrc);
 
-resultPromise.then(data => console.log(data));
 
-resultPromise.catсh(error => console.log(error));
+resultPromise.then(data => console.log(data)).catch(error => console.log(error));
+
+
+
 
 
 // const onImageLoadedd = (error, data) => {
