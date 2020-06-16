@@ -1,24 +1,34 @@
-// asyncSum(asynkNum1, asyncNum2, ...)
 
-const getValueWithDelay = (value, delay) => new Promise(resolve => {
+
+const getRandomNumber = (from, to) =>
+  from + Math.random() * (to - from);
+
+const request = url => new Promise(resolve => {
+  const randomDelay = getRandomNumber(1000, 3000);
   setTimeout(() => {
-    resolve(value);
-  }, delay);
-})
+    resolve({
+      userData: {
+        name: "Tom",
+        age: 17
+      },
+    });
+  }, randomDelay);
+});
 
-const asynkNum1 = getValueWithDelay(56, 1000);
-const asynkNum2 = getValueWithDelay(4, 2000);
-const asynkNum3 = getValueWithDelay(10, 3000);
 
-const getSum = numbers => 
-  numbers
-  .filter(value => !isNaN(value))
-  .reduce((acc, num) => acc + Number(num), 0);
+const servers = [
+  "https://server.com/us/users/userid",
+  "https://server.com/eu",
+  "https://server.com/au",
+];
 
-const asyncSum = (...asyncNumbers) => {
-  return Promise.all(asyncNumbers)
-    .then(numbers => getSum(numbers));
-};
+const getUserASAP = (userId) => {
+  const userUrls = servers
+    .map(serverUrl => `${serverUrl}/users/${userId}`);
+  const requests = userUrls
+    .map(userUrl => request(userUrl));
 
-asyncSum(asynkNum1, asynkNum2, asynkNum3)
-  .then(result => console.log(result));
+  return Promise.race(requests);
+}
+
+console.log(getUserASAP(servers))
