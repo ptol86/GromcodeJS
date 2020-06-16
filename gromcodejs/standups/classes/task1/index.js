@@ -21,7 +21,10 @@ User.prototype.setAge = function (value) {
   }
   this.age = value;
   if(value > 25) {
-    this.requestNewPhoto()
+    this.requestNewPhoto();
+  }
+  if(value >= 0) {
+  return value;
   }
 }
 let user = new User("Vasya", 50);
