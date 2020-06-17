@@ -1,33 +1,23 @@
-// classes
-
-class User {
-  constructor(name, age) {
+export class Sportsman {
+  constructor(name) {
     this.name = name;
-    this.age = age;
-
-    sayHi = function () {
-      console.log(`Hi, I am ${this.name}`);
-    }
-    requestNewPhoto = function () {
-      console.log(`New photo request was sent for ${this.name}`);
-    }
-    
-    setAge = function (value) {
-      if(value < 0) {
-        return false;
-      }
-      this.age = value;
-      if(value >= 25) {
-        this.requestNewPhoto();
-      }
-      if(value >= 0) {
-      return value;
-      }
-    }
+  }
+  run() {
+    console.log(`${this.name} is running`)
   }
 }
 
-let user = new User("Vasya", 50);
-console.log(user);
-user.sayHi();
-user.setAge(-26)
+
+export class Swimmer extends Sportsman {
+  constructor(name, breaststroke) {
+    super(name);
+    this.breaststroke = breaststroke;
+  }
+  swim() {
+    console.log(`${this.name} is swimming ${this.breaststroke}`)
+  }
+}
+
+// let a = new Swimmer("john", "breast");
+
+// a.swim();
