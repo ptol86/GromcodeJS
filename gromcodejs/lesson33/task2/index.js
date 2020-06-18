@@ -7,11 +7,11 @@ export const getTasksList = () => {
   .then(response => response.json())
  
 }
-console.log(getTasksList());
+// console.log(getTasksList());
 
 export const getTaskById = taskId => {
   return fetch(`${baseUrl}/${taskId}`)
   .then(response => response.json())
 }
 
-console.log(getTaskById(1));
+// console.log(getTaskById(1));
