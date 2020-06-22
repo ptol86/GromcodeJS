@@ -10,8 +10,8 @@ export const onDeleteTask = (el) => {
     }
     
     const taskId = el.target
-        .closest('.list-item')
-        .querySelector('.list-item__checkbox')
+        .closest(".list-item")
+        .querySelector(".list-item__checkbox")
         .dataset.id;
 
     deleteTask(taskId)
