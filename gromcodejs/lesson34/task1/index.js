@@ -12,12 +12,6 @@ const formInputElem = [...document.querySelectorAll(".form-input")];
 
 const userData = JSON.stringify(Object.fromEntries(new FormData(formElem)))
 
-const isValid = () => {
-  formElem.reportValidity() 
-  ? submitBtn.disabled = false 
-  : submitBtn.disabled = true;
-  errorElem.textContent = '';
-}
 formElem.addEventListener('input', () => {
   formElem.reportValidity() 
   ? submitBtn.disabled = false 
