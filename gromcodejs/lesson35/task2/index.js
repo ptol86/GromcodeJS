@@ -20,7 +20,7 @@ failRequest
         console.log("onSuccess2", data);
     })
     .catch(function onError3(error) {
-        console.error("onError2", error.message);
+        console.error("onError3", error.message);
     });
 
 
