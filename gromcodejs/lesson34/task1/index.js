@@ -10,61 +10,42 @@ const errorElem = document.querySelector(".error-text");
 
 const formInputElem = [...document.querySelectorAll(".form-input")];
 
-const userData = {
-  email: "",
-  name: "",
-  password: "",
-}
+const userData = JSON.stringify(Object.fromEntries(new FormData(formElem)))
 
 const isValid = () => {
   formElem.reportValidity() 
   ? submitBtn.disabled = false 
   : submitBtn.disabled = true;
-  // errorElem.textContent = '';
+  errorElem.textContent = '';
 }
-
-const onFieldChange = (field) => {
-    field.addEventListener("change", () => {
-      userData[field.name] = field.value;
-      isValid();
-    })
-}
-
-
-onFieldChange(emailInputElem);
-onFieldChange(userNameInputElem);
-onFieldChange(passwordInputElem);
-
-const onEmailChange = event => {
-    userData.email = event.target.value;
-    
-};
-
-
-
-const createUser = obj => {
-  return fetch(baseUrl, {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json",
-      },
-      body: JSON.stringify(obj),
-
-  })
-    .then(response => response.json())
-    .then(result => {
-      formInputElem.map(elem => elem.value = '');
-      submitBtn.disabled = true;
-      alert(JSON.stringify(result))
-    })
-    .catch(() => {
-      errorElem.innerHTML = "Failed to create user";
-    });
-       
-};
-
-formElem.addEventListener("submit", (event) => {
-    event.preventDefault();
-    createUser(userData);
+formElem.addEventListener('input', () => {
+  formElem.reportValidity() 
+  ? submitBtn.disabled = false 
+  : submitBtn.disabled = false;
+  errorElem.textContent = '';
 })
+
+formElem.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const formData = [...new FormData(formElem)]
+      .reduce((acc, [input, value]) => ({...acc, [input]: value }), {});
+  fetch(baseUrl, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(result => {
+        formInputElem.map(elem => elem.value = '');
+        submitBtn.disabled = true;
+        alert(JSON.stringify(result))
+      })
+  .catch(() => errorElem.innerHTML = 'Failed to create user')
+});
+
+
+
+
 
