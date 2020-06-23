@@ -1,35 +1,30 @@
+const successRequest = Promise.resolve({ name: "Tom" });
+
+successRequest
+    .then(function onSuccess1(data) {
+       throw new Error("Error with data");
+    })
+    .catch(function onError1(error) {
+        console.error(error.message);
+    })
+
+
+const failRequest = Promise.reject(new Error("Something went wrong"));
+
+failRequest
+    .catch(function onError2(error) {
+        console.error(error.message);
+        throw new Error("Server error");
+    })
+    .then(function onSuccess2(data) {
+        console.log("onSuccess2", data);
+    })
+    .catch(function onError3(error) {
+        console.error(error.message);
+    });
+
 
 const sucessRequest = Promise.resolve({
   name: 'Tom'
 })
 
-sucessRequest
-    .then(data => {
-      console.log(data);
-      throw new Error("Unexpected error");
-      
-    })
-    .catch(err => {
-        console.warn(err.message);
-    })
-
-const failedRequest = Promise.reject(new Error('Fail'));
-
-failedRequest
-    then(data => {
-      console.log(data);
-    })
-    .catch(err => {
-        console.warn(err.message);
-        // return Promise.reject(err);
-        throw err;
-        
-    })
-    .then(data => {
-      console.log(data);
-           
-    });
-
-window.addEventListener('unhandledrejection', function(e) {
-    console.log(e.reason.message);
-})
