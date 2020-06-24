@@ -2,9 +2,6 @@ import { renderUserData } from './renderUserData.js';
 import { showSpinner, hideSpinner } from './spinner.js';
 import { fetchUserData, fetchReposUrlData } from './fetch.js';
 
-
-
-
 const showUserBtnElem = document.querySelector(".name-form__btn");
 const userNameInputElem = document.querySelector(".name-form__input");
 const reposListElem = document.querySelector(".repo-list");
@@ -39,10 +36,7 @@ const onSearchUser = () => {
         })
 
     hideSpinner();
-      
-    
-
-    
+ 
 }
 
 showUserBtnElem.addEventListener("click", onSearchUser);
