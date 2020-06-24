@@ -5,4 +5,6 @@ const listItemTextContent = (event) => {
   console.log(event.target.textContent);
 }
 
-listItemElem.addEventListener('click', listItemTextContent)
+// listItemElem.addEventListener('click', listItemTextContent)
+
+document.querySelector('.list').addEventListener('click', listItemTextContent);
