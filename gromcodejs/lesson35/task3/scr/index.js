@@ -10,8 +10,8 @@ const userNameInputElem = document.querySelector(".name-form__input");
 const reposListElem = document.querySelector(".repo-list");
 
 const onSearchUser = () => {
-    showSpinner();
     reposListElem.innerHTML = "";
+    showSpinner();
     const userName = userNameInputElem.value;
     fetchUserData(userName)
         .then(userData => {
