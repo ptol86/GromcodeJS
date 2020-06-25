@@ -7,7 +7,7 @@ export const parseUser = jsonStr => {
 };
 
 
-const a = `{name": "Vasya", "age": 24}`;
+// const a = `{name": "Vasya", "age": 24}`;
 
 
-console.log(parseUser(a));
+// console.log(parseUser(a));
