@@ -4,20 +4,18 @@ export const fetchUserData = userName => {
             if (response.ok) {
                 return  response.json();
             }
-            else {
-                throw new Error("Failed to load data")
-            };
+            throw new Error("Failed to load data")
+            
         });
 }
 
 export const fetchReposUrlData = url => {
     return fetch(url)
-        .then(response =>  {
+        .then(response => {
             if (response.ok) {
                 return  response.json();
             }
-            else {
-                throw new Error("Failed to load data")
-            };
+            throw new Error("Failed to load data")
+            
         });
 }

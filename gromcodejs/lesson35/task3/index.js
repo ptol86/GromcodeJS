@@ -1,41 +1,42 @@
 import { renderUserData } from './renderUserData.js';
 import { showSpinner, hideSpinner } from './spinner.js';
 import { fetchUserData, fetchReposUrlData } from './fetch.js';
+import { reposList, renderRepos, cleanReposList } from './repos.js';
 
 const showUserBtnElem = document.querySelector(".name-form__btn");
 const userNameInputElem = document.querySelector(".name-form__input");
-const reposListElem = document.querySelector(".repo-list");
+
+const defaultUser = {
+    avatar_url: "https://avatars3.githubusercontent.com/u10001",
+    name: "",
+    location: "",
+}
+
+renderUserData(defaultUser);
 
 const onSearchUser = () => {
-    reposListElem.innerHTML = "";
+    cleanReposList();
     showSpinner();
     const userName = userNameInputElem.value;
+
     fetchUserData(userName)
         .then(userData => {
             return renderUserData(userData);
-                      
         })
         .then(url => {
             return fetchReposUrlData(url);
-
         })
-        .then(reposUrl => {
-            const repoListElems = reposUrl
-                .map(({ name }) => {
-                    const repoListElem = document.createElement("li");
-                    repoListElem.classList.add("repo-list__item");
-                    repoListElem.textContent = name;
-                    return repoListElem;
-            });
-            reposListElem.append(...repoListElems)
+        .then(reposList => {
+            renderRepos(reposList);
         })
         .catch(err => {
-            console.log(err.message);
             alert(err.message);
-            
+        })
+        .finally(() => {
+            hideSpinner();
         })
 
-    hideSpinner();
+    
  
 }
 
