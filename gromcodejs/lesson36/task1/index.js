@@ -1,6 +1,6 @@
 export const fetchUser = async userID => {
     try {
-        const response = await fetch(`ttps://api.github.com/users/${userID}`);
+        const response = await fetch(`https://api.github.com/users/${userID}`);
         if (!response.ok) {
             return null;
         }
