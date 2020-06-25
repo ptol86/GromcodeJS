@@ -13,7 +13,7 @@ export const getUsersBlogs = async usersId => {
 
 async function fetchUser (userName) {
     try {
-    const response = await fetch(`htts://api.github.com/users/${userName}`);
+    const response = await fetch(`https://api.github.com/users/${userName}`);
         if (response.ok) {
             return  response.json();
         }    
