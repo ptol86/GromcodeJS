@@ -1,16 +1,19 @@
 export const getUsersBlogs = async usersId => {
-
-    return Promise.all(usersId.map(user => 
-        fetchUser(user)
-        .then(userData => userData.blog)
-        .catch(err => alert(err.message))
-    ))
+    try {
+        return Promise.all(usersId.map(user => 
+            fetchUser(user)
+            .then(userData => userData.blog)
+            
+        ))
+    } catch (err) {
+        alert(err.message);
+    }
     
 };
 
 async function fetchUser (userName) {
     try {
-    const response = await fetch(`https://api.github.com/users/${userName}`);
+    const response = await fetch(`htts://api.github.com/users/${userName}`);
         if (response.ok) {
             return  response.json();
         }    
