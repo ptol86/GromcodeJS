@@ -1,8 +1,11 @@
+import { createTask, getTasks } from "./gateway.js";
+import { renderTasks } from './render.js'
+
 //algo
-//1. create delete click handler
-//2. get task Id
-//3. send DELETE http request by taskId
-//4. render tasks
+//1. create task obj ++
+//2. make post request with task
+//3. render tasks
+
 export const onCreateTask = () => {
     const taskTitleInputElem = document.querySelector('.task-input');
     const text = taskTitleInputElem.value;
@@ -10,17 +13,18 @@ export const onCreateTask = () => {
         return;
     }
     taskTitleInputElem.value = '';
+    
     const newTask = {
         text,
         done: false,
-        createDate: new Date().toISOString(),
-        id: Math.random().toISOString()
+        createdDate: new Date().toISOString(),
+        
     };
     createTask(newTask)
-        .then(() => getTasksList())
+        .then(() => getTasks())
         .then(newTasksList => {
-            setItem('tasksList', newTasksList);
-            renderTasks();
+            renderTasks(newTasksList);
         })
-    const newTasksList = tasksList.concat();
-    renderTasks();
+}
+    
+    // renderTasks();
